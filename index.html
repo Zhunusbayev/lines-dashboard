@@ -14,7 +14,7 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{dis
 :root{
   --bg:#EDF0EE; --paper:#F8F9F7; --raise:#FFFFFF; --ink:#1C2321; --muted:#5A6561; --line:#CCD4D0;
   --water:#D4E1E6; --land:#E2E6E1; --land-f:#EFE9DA; --border-f:#8E8466; --border-n:#BCC5C1;
-  --ok:#147A5C; --build:#C27406; --plan:#6646C2; --accent:#1F5F8B; --danger:#B3261E;
+  --ok:#147A5C; --build:#C27406; --plan:#6646C2; --stalled:#8C8574; --stopped:#B3261E; --accent:#1F5F8B; --danger:#B3261E;
   --halo:#F8F9F7; --hi:#FFF2C9; --scrim:rgba(20,28,26,.45);
   --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -23,12 +23,12 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{dis
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#111615; --paper:#182020; --raise:#1E2827; --ink:#E5EBE9; --muted:#9AA6A2; --line:#2E3836;
   --water:#13222A; --land:#1D2524; --land-f:#2C2A22; --border-f:#7D7356; --border-n:#34403D;
-  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --accent:#6BB0E0; --danger:#F2867E;
+  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --stalled:#9C9584; --stopped:#F2867E; --accent:#6BB0E0; --danger:#F2867E;
   --halo:#182020; --hi:#3A3317; --scrim:rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111615; --paper:#182020; --raise:#1E2827; --ink:#E5EBE9; --muted:#9AA6A2; --line:#2E3836;
   --water:#13222A; --land:#1D2524; --land-f:#2C2A22; --border-f:#7D7356; --border-n:#34403D;
-  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --accent:#6BB0E0; --danger:#F2867E;
+  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --stalled:#9C9584; --stopped:#F2867E; --accent:#6BB0E0; --danger:#F2867E;
   --halo:#182020; --hi:#3A3317; --scrim:rgba(0,0,0,.6); color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:14.5px/1.5 var(--f-body);padding-inline:16px;padding-block:18px 48px}
@@ -51,7 +51,7 @@ h1{font:700 clamp(28px,4.4vw,42px)/1 var(--f-display);margin:0;text-wrap:balance
 .bar{height:6px;border-radius:3px;background:var(--line);display:flex;overflow:hidden}
 .bar i{display:block;height:100%}
 .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none;transform:translateY(-1px)}
-.d-ok{background:var(--ok)}.d-build{background:var(--build)}.d-plan{background:var(--plan)}
+.d-ok{background:var(--ok)}.d-build{background:var(--build)}.d-plan{background:var(--plan)}.d-stalled{background:var(--stalled)}.d-stopped{background:var(--stopped)}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:6px}
 .filters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:11px 13px}
 .group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -81,7 +81,7 @@ dl.facts{margin:0;display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1f
 dl.facts dt{color:var(--muted);font-size:13px}
 dl.facts dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .pill{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f-body);padding:4px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.p-ok{color:var(--ok)}.p-build{color:var(--build)}.p-plan{color:var(--plan)}
+.p-ok{color:var(--ok)}.p-build{color:var(--build)}.p-plan{color:var(--plan)}.p-stalled{color:var(--stalled)}.p-stopped{color:var(--stopped)}
 .tag{font:600 11px/1 var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);padding:3px 6px;border-radius:3px;white-space:nowrap}
 .tag.kz{color:var(--accent);border-color:var(--accent)}
 .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
@@ -162,11 +162,14 @@ td small{display:block;color:var(--muted)}
       <button class="chip" id="m-rail" data-k="modes" data-v="rail" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="2.5"/><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="8" stroke-dasharray="1.4 5"/></svg>ЖД</button>
       <button class="chip" id="m-road" data-k="modes" data-v="road" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="3.5"/></svg>Авто</button>
       <button class="chip" id="m-fiber" data-k="modes" data-v="fiber" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="2" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 5"/></svg>ВОЛС</button>
+      <button class="chip" id="m-power" data-k="modes" data-v="power" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="2" stroke-dasharray="7 2.5 1.5 2.5"/></svg>ЛЭП и трубы</button>
     </div>
     <div class="group"><span>Статус</span>
       <button class="chip" id="s-ok" data-k="statuses" data-v="ok" aria-pressed="true"><i class="dot d-ok"></i>Действует</button>
       <button class="chip" id="s-build" data-k="statuses" data-v="build" aria-pressed="true"><i class="dot d-build"></i>Строится</button>
       <button class="chip" id="s-plan" data-k="statuses" data-v="plan" aria-pressed="true"><i class="dot d-plan"></i>Планируется</button>
+      <button class="chip" id="s-stalled" data-k="statuses" data-v="stalled" aria-pressed="true"><i class="dot d-stalled"></i>Заморожено</button>
+      <button class="chip" id="s-stopped" data-k="statuses" data-v="stopped" aria-pressed="true"><i class="dot d-stopped"></i>Остановлено</button>
     </div>
     <div class="group"><span>Страна</span>
       <button class="chip" id="c-AF" data-k="countries" data-v="AF" aria-pressed="true">Афганистан</button>
@@ -193,8 +196,9 @@ td small{display:block;color:var(--muted)}
         <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="2.4"/><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="8" stroke-dasharray="1.4 5.5"/></svg>ЖД</span>
         <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="3.4"/></svg>автодорога</span>
         <span><svg width="30" height="12" aria-hidden="true"><line x1="3" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 5"/></svg>ВОЛС</span>
+        <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 2.5 1.5 2.5"/></svg>ЛЭП / трубопровод</span>
         <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="2.6" stroke-dasharray="6 4"/></svg>пунктир — планируется</span>
-        <span><i class="dot d-ok"></i>действует</span><span><i class="dot d-build"></i>строится</span><span><i class="dot d-plan"></i>планируется</span>
+        <span><i class="dot d-ok"></i>действует</span><span><i class="dot d-build"></i>строится</span><span><i class="dot d-plan"></i>планируется</span><span><i class="dot d-stalled"></i>заморожено</span><span><i class="dot d-stopped"></i>остановлено</span>
         <span>Трассы схематичные, по опорным городам</span>
       </div>
     </div>
@@ -236,9 +240,10 @@ td small{display:block;color:var(--muted)}
 let GEO={W:1000,H:878,L0:48.8,T:44.4,kx:1,ky:1,others:"",focus:{}},GAZ={};
 let W=1000,H=878,L0=48.8,T=44.4,kx=1,ky=1;
 const P=([lo,la])=>[(lo-L0)*kx,(T-la)*ky];
-const MODES={rail:"ЖД",road:"Автодорога",fiber:"ВОЛС"};
-const STAT={ok:"Действует",build:"Строится",plan:"Планируется"};
-const STAT_ORDER={ok:0,build:1,plan:2};
+const MODES={rail:"ЖД",road:"Автодорога",fiber:"ВОЛС",power:"ЛЭП / трубопровод"};
+const SLIST=["ok","build","plan","stalled","stopped"];
+const STAT={ok:"Действует",build:"Строится",plan:"Планируется",stalled:"Заморожено",stopped:"Остановлено"};
+const STAT_ORDER={ok:0,build:1,plan:2,stalled:3,stopped:4};
 const CTRY={AF:"Афганистан",PK:"Пакистан",TM:"Туркменистан",OT:"Прочие"};
 const CTRY_S={AF:"АФ",PK:"ПК",TM:"ТМ",OT:"Пр."};
 const VIEWS={region:null,AF:[60,75.2,29.2,38.7],PK:[60.4,77.8,23.3,37.2],TM:[51.8,67.2,35.0,43.0]};
@@ -270,7 +275,7 @@ function parseRoute(str){
 }
 
 /* ---------- state ---------- */
-const state={items:[],ready:false,dbOk:null,modes:new Set(["rail","road","fiber"]),statuses:new Set(["ok","build","plan"]),countries:new Set(["AF","PK","TM","OT"]),kz:false,q:"",view:"region",sel:null,sort:{key:"country",dir:1},canEdit:false,uid:null};
+const state={items:[],ready:false,dbOk:null,modes:new Set(["rail","road","fiber","power"]),statuses:new Set(SLIST),countries:new Set(["AF","PK","TM","OT"]),kz:false,q:"",view:"region",sel:null,sort:{key:"country",dir:1},canEdit:false,uid:null};
 let db=null,user=null,downloads=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -295,8 +300,8 @@ function viewRect(v){
   let w=x2-x1,h=y2-y1;const r=W/H;
   if(w/h>r){const nh=w/r;return [x1,y1-(nh-h)/2,w,nh]}else{const nw=h*r;return [x1-(nw-w)/2,y1,nw,h]}
 }
-const SCREEN={water:"var(--water)",land:"var(--land)",landF:"var(--land-f)",borderF:"var(--border-f)",borderN:"var(--border-n)",ok:"var(--ok)",build:"var(--build)",plan:"var(--plan)",ink:"var(--ink)",muted:"var(--muted)",halo:"var(--halo)",paper:"var(--paper)",font:"var(--f-display)"};
-const PRINT={water:"#D4E1E6",land:"#E2E6E1",landF:"#EFE9DA",borderF:"#8E8466",borderN:"#BCC5C1",ok:"#147A5C",build:"#C27406",plan:"#6646C2",ink:"#1C2321",muted:"#5A6561",halo:"#F8F9F7",paper:"#F8F9F7",font:"Arial, Helvetica, sans-serif"};
+const SCREEN={water:"var(--water)",land:"var(--land)",landF:"var(--land-f)",borderF:"var(--border-f)",borderN:"var(--border-n)",ok:"var(--ok)",build:"var(--build)",plan:"var(--plan)",stalled:"var(--stalled)",stopped:"var(--stopped)",ink:"var(--ink)",muted:"var(--muted)",halo:"var(--halo)",paper:"var(--paper)",font:"var(--f-display)"};
+const PRINT={water:"#D4E1E6",land:"#E2E6E1",landF:"#EFE9DA",borderF:"#8E8466",borderN:"#BCC5C1",ok:"#147A5C",build:"#C27406",plan:"#6646C2",stalled:"#8C8574",stopped:"#B3261E",ink:"#1C2321",muted:"#5A6561",halo:"#F8F9F7",paper:"#F8F9F7",font:"Arial, Helvetica, sans-serif"};
 function routeD(p){const {segs}=parseRoute(p.route);return segs.filter(s=>s.length>1).map(s=>s.map((k,i)=>{const [x,y]=P(GAZ[k]);return (i?"L":"M")+x.toFixed(1)+","+y.toFixed(1)}).join("")).join("")}
 function drawMap(items,{view="region",sel=null,pal=SCREEN,interactive=true}={}){
   const [vx,vy,vw,vh]=viewRect(view);const k=W/vw;const u=1/k;
@@ -304,17 +309,18 @@ function drawMap(items,{view="region",sel=null,pal=SCREEN,interactive=true}={}){
   h+=`<path d="${GEO.others}" fill="${pal.land}" stroke="${pal.borderN}" stroke-width="${0.8*u}"/>`;
   for(const c of ["AF","PK","TM"])h+=`<path d="${GEO.focus[c]}" fill="${pal.landF}" stroke="${pal.borderF}" stroke-width="${1.2*u}"/>`;
   for(const [n,,lo,la,t] of CNAMES){const [x,y]=P([lo,la]);const fs=(t==="f"?15:12)*u;h+=`<text x="${x}" y="${y}" text-anchor="middle" font-family="${pal.font}" font-size="${fs}" font-weight="600" letter-spacing="${3*u}" fill="${pal.muted}" opacity="${t==="f"?0.6:0.5}">${n}</text>`}
-  const order={road:0,rail:1,fiber:2},sto={plan:0,build:1,ok:2};
+  const order={power:0,road:1,rail:2,fiber:3},sto={stopped:0,stalled:1,plan:2,build:3,ok:4};
   const list=[...items].sort((a,b)=>(order[a.mode]-order[b.mode])||(a.id===sel)-(b.id===sel)||(sto[a.status]-sto[b.status]));
   const used=new Set();
   for(const p of list){
     const d=routeD(p);if(!d)continue;
     parseRoute(p.route).segs.flat().forEach(k=>used.add(k));
-    const col=pal[p.status]||pal.muted;const plan=p.status==="plan";const isSel=sel===p.id;const w=isSel?1.7:1;
+    const col=pal[p.status]||pal.muted;const plan=p.status==="plan";const frozen=p.status==="stalled"||p.status==="stopped";const dash=plan?` stroke-dasharray="${6*u} ${4*u}"`:frozen?` stroke-dasharray="${2*u} ${4*u}"`:"";const isSel=sel===p.id;const w=isSel?1.7:1;
     let g=`<g class="feat${sel&&!isSel?" dim":""}" data-id="${esc(p.id)}">`;
-    if(p.mode==="road"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${5.6*u*w}" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${3.2*u*w}" stroke-linecap="round" stroke-linejoin="round"${plan?` stroke-dasharray="${6*u} ${4*u}"`:""}/>`}
-    else if(p.mode==="rail"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${6*u*w}" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${2.4*u*w}" stroke-linejoin="round"${plan?` stroke-dasharray="${6*u} ${4*u}"`:""}/><path d="${d}" fill="none" stroke="${col}" stroke-width="${8*u*w}" stroke-dasharray="${1.4*u} ${6*u}" stroke-linejoin="round"/>`}
-    else{g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="${4*u*w}" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="${0.1*u} ${5.5*u}" opacity="0.95"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${1*u*w}" stroke-linejoin="round" opacity="0.7"${plan?` stroke-dasharray="${4*u} ${3*u}"`:""}/>`}
+    if(p.mode==="road"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${5.6*u*w}" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${3.2*u*w}" stroke-linecap="round" stroke-linejoin="round"${dash}/>`}
+    else if(p.mode==="power"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${4.5*u*w}" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${2*u*w}" stroke-linejoin="round" stroke-dasharray="${plan||frozen?`${3*u} ${3*u}`:`${7*u} ${2.5*u} ${1.5*u} ${2.5*u}`}"/>`}
+    else if(p.mode==="rail"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${6*u*w}" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${2.4*u*w}" stroke-linejoin="round"${dash}/><path d="${d}" fill="none" stroke="${col}" stroke-width="${8*u*w}" stroke-dasharray="${1.4*u} ${6*u}" stroke-linejoin="round"/>`}
+    else{g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="${4*u*w}" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="${0.1*u} ${5.5*u}" opacity="0.95"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${1*u*w}" stroke-linejoin="round" opacity="0.7"${plan||frozen?` stroke-dasharray="${4*u} ${3*u}"`:""}/>`}
     if(interactive)g+=`<path d="${d}" fill="none" stroke="transparent" stroke-width="${14*u}" stroke-linecap="round"/><title>${esc(p.name)} — ${STAT[p.status]||""}</title>`;
     h+=g+"</g>";
   }
@@ -341,15 +347,16 @@ $("#map").addEventListener("click",e=>{const g=e.target.closest(".feat");if(g)se
 /* ---------- KPIs ---------- */
 function renderKpis(){
   const items=filtered();let h="";
-  for(const m of ["rail","road","fiber"]){
+  const MNAME={rail:"Железные дороги",road:"Автодороги",fiber:"ВОЛС",power:"ЛЭП и трубопроводы"};
+  for(const m of ["rail","road","fiber","power"]){
     if(!state.modes.has(m))continue;
     const sub=items.filter(p=>p.mode===m);const sum=s=>sub.filter(p=>p.status===s).reduce((a,p)=>a+(+p.km||0),0);
-    const tot=sum("ok")+sum("build")+sum("plan")||1;
-    h+=`<div class="kpi"><h3><span>${m==="rail"?"Железные дороги":m==="road"?"Автодороги":"ВОЛС"}, км</span><span>${sub.length} объектов</span></h3>
-    <div class="row">${["ok","build","plan"].map(s=>`<span><i class="dot d-${s}"></i><b>${fmtKm(sum(s))}</b>${STAT[s].toLowerCase()}</span>`).join("")}</div>
-    <div class="bar" aria-hidden="true">${["ok","build","plan"].map(s=>`<i style="width:${sum(s)/tot*100}%;background:var(--${s})"></i>`).join("")}</div></div>`;
+    const tot=SLIST.reduce((a,s)=>a+sum(s),0)||1;const shown=SLIST.filter((s,i)=>i<3||sum(s)>0||sub.some(p=>p.status===s));
+    h+=`<div class="kpi"><h3><span>${MNAME[m]}, км</span><span>${sub.length} объектов</span></h3>
+    <div class="row">${shown.map(s=>`<span><i class="dot d-${s}"></i><b>${fmtKm(sum(s))}</b>${STAT[s].toLowerCase()}</span>`).join("")}</div>
+    <div class="bar" aria-hidden="true">${SLIST.map(s=>`<i style="width:${sum(s)/tot*100}%;background:var(--${s})"></i>`).join("")}</div></div>`;
   }
-  h+=`<div class="kpi"><h3><span>Как считать</span></h3><span class="mini">Сумма протяжённости по записям реестра в текущем фильтре. Переходы и подводные кабели без длины не суммируются.</span></div>`;
+  h+=`<div class="kpi"><h3><span>Как считать</span></h3><span class="mini">Сумма протяжённости по записям реестра в текущем фильтре. Переходы, договоры и подводные кабели без длины не суммируются.</span></div>`;
   $("#kpis").innerHTML=h;
 }
 
@@ -541,9 +548,9 @@ function drawLegend(x,y0,s,cw){
   let cx=24*s,cy=y0+26*s;
   const item=(draw,label)=>{draw(cx,cy);x.fillStyle=pal.ink;x.fillText(label,cx+44*s,cy);cx+=44*s+x.measureText(label).width+28*s};
   const line=(col,dash,wd)=>(a,b)=>{x.strokeStyle=col;x.lineWidth=wd*s;x.setLineDash(dash.map(d=>d*s));x.beginPath();x.moveTo(a,b);x.lineTo(a+34*s,b);x.stroke();x.setLineDash([])};
-  item(line(pal.ok,[],4),"действует");item(line(pal.build,[],4),"строится");item(line(pal.plan,[7,5],4),"планируется");
+  item(line(pal.ok,[],4),"действует");item(line(pal.build,[],4),"строится");item(line(pal.plan,[7,5],4),"планируется");item(line(pal.stalled,[2,4],4),"заморожено / остановлено");
   item((a,b)=>{line(pal.muted,[],2.4)(a,b);line(pal.muted,[1.6,6],9)(a,b)},"ЖД");item(line(pal.muted,[],4),"автодорога");
-  item((a,b)=>{x.lineCap="round";line(pal.muted,[0.1,6],5)(a,b);x.lineCap="butt"},"ВОЛС");
+  item((a,b)=>{x.lineCap="round";line(pal.muted,[0.1,6],5)(a,b);x.lineCap="butt"},"ВОЛС");item(line(pal.muted,[7,2.5,1.5,2.5],2.5),"ЛЭП / труба");
   x.font=`${13*s}px Arial, sans-serif`;x.fillStyle=pal.muted;
   x.fillText(`Фильтр: ${filterLabel()}`,24*s,y0+60*s);
   x.fillText(`Трассы схематичные. Данные на ${today()}, источники в реестре.`,24*s,y0+86*s);
@@ -582,7 +589,7 @@ $("#x-pptx").onclick=async()=>{
     const PptxGenJS=await loadScript(LIB_PPTX,"PptxGenJS");
     const items=sortItems(filtered());
     const pptx=new PptxGenJS();pptx.layout="LAYOUT_WIDE";pptx.title="Дороги и связь: АФ, ПК, ТМ";
-    const F="Arial",INK="1C2321",MUT="5A6561",COL={ok:"147A5C",build:"C27406",plan:"6646C2"};
+    const F="Arial",INK="1C2321",MUT="5A6561",COL={ok:"147A5C",build:"C27406",plan:"6646C2",stalled:"8C8574",stopped:"B3261E"};
     // cover
     let s=pptx.addSlide();s.background={color:"12232B"};
     s.addText("Дороги и связь: Афганистан, Пакистан, Туркменистан",{x:0.7,y:2.2,w:11.5,h:1.5,fontFace:F,fontSize:38,bold:true,color:"EEF2EF"});
@@ -595,10 +602,10 @@ $("#x-pptx").onclick=async()=>{
     const ih=6.45,iw=ih*w/h;s.addImage({data:png,x:0.5,y:0.9,w:iw,h:ih});
     const rx=0.5+iw+0.35,rw=13.33-rx-0.4;
     const sum=(m,st)=>items.filter(p=>p.mode===m&&p.status===st).reduce((a,p)=>a+(+p.km||0),0);
-    const kpi=[];for(const m of ["rail","road","fiber"]){if(!state.modes.has(m))continue;kpi.push({text:(m==="rail"?"Железные дороги":m==="road"?"Автодороги":"ВОЛС")+", км\n",options:{bold:true,fontSize:13,color:INK}});
-      for(const st of ["ok","build","plan"])kpi.push({text:`${STAT[st]}: ${fmtKm(sum(m,st))}\n`,options:{fontSize:12,color:COL[st]}});kpi.push({text:"\n",options:{fontSize:6}})}
+    const kpi=[];for(const m of ["rail","road","fiber","power"]){if(!state.modes.has(m))continue;kpi.push({text:({rail:"Железные дороги",road:"Автодороги",fiber:"ВОЛС",power:"ЛЭП и трубопроводы"})[m]+", км\n",options:{bold:true,fontSize:13,color:INK}});
+      for(const st of SLIST.filter(s=>s!=="stopped"||items.some(p=>p.mode===m&&p.status===s)))kpi.push({text:`${STAT[st]}: ${fmtKm(sum(m,st))}\n`,options:{fontSize:12,color:COL[st]}});kpi.push({text:"\n",options:{fontSize:6}})}
     s.addText(kpi,{x:rx,y:0.95,w:rw,h:3.6,fontFace:F,valign:"top"});
-    s.addText([{text:"Цвет — статус: зелёный действует, оранжевый строится, фиолетовый планируется (пунктир).\n",options:{}},{text:"Рисунок линии — вид: ЖД со шпалами, автодорога сплошная, ВОЛС точками.\n",options:{}},{text:"Трассы схематичные.",options:{}}],{x:rx,y:4.7,w:rw,h:2.4,fontFace:F,fontSize:11,color:MUT,valign:"top"});
+    s.addText([{text:"Цвет — статус: зелёный действует, оранжевый строится, фиолетовый планируется (пунктир), серый заморожено, красный остановлено.\n",options:{}},{text:"Рисунок линии — вид: ЖД со шпалами, автодорога сплошная, ВОЛС точками, ЛЭП и трубы штрихпунктиром.\n",options:{}},{text:"Трассы схематичные.",options:{}}],{x:rx,y:4.7,w:rw,h:2.4,fontFace:F,fontSize:11,color:MUT,valign:"top"});
     // tables
     const head=["Объект","Страны","Км","Статус","Подрядчик / исполнитель","Финансирование","Сроки"].map(t=>({text:t,options:{bold:true,color:"FFFFFF",fill:{color:"12232B"}}}));
     const per=7;
@@ -617,6 +624,7 @@ $("#x-pptx").onclick=async()=>{
   }catch(e){msg(e&&e.message==="lib"?"Не загрузилась библиотека PowerPoint. Проверьте интернет и повторите.":"Не удалось собрать презентацию.")}finally{busy(false)}
 };
 
+window.addEventListener("hashchange",()=>{const h=decodeURIComponent(location.hash.slice(1));if(h&&h!==state.sel&&state.items.some(p=>p.id===h))select(h,true)});
 /* ---------- boot ---------- */
 renderAll();
 (async()=>{
