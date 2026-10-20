@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Коридоры АФ · ПК · ТМ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: operations sheet — header + role chip, KPI strip, filter bar, map | detail panel, export bar, register table */
+:root{
+  --bg:#EDF0EE; --paper:#F8F9F7; --raise:#FFFFFF; --ink:#1C2321; --muted:#5A6561; --line:#CCD4D0;
+  --water:#D4E1E6; --land:#E2E6E1; --land-f:#EFE9DA; --border-f:#8E8466; --border-n:#BCC5C1;
+  --ok:#147A5C; --build:#C27406; --plan:#6646C2; --accent:#1F5F8B; --danger:#B3261E;
+  --halo:#F8F9F7; --hi:#FFF2C9; --scrim:rgba(20,28,26,.45);
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111615; --paper:#182020; --raise:#1E2827; --ink:#E5EBE9; --muted:#9AA6A2; --line:#2E3836;
+  --water:#13222A; --land:#1D2524; --land-f:#2C2A22; --border-f:#7D7356; --border-n:#34403D;
+  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --accent:#6BB0E0; --danger:#F2867E;
+  --halo:#182020; --hi:#3A3317; --scrim:rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111615; --paper:#182020; --raise:#1E2827; --ink:#E5EBE9; --muted:#9AA6A2; --line:#2E3836;
+  --water:#13222A; --land:#1D2524; --land-f:#2C2A22; --border-f:#7D7356; --border-n:#34403D;
+  --ok:#3CC293; --build:#F0A73A; --plan:#A88DF2; --accent:#6BB0E0; --danger:#F2867E;
+  --halo:#182020; --hi:#3A3317; --scrim:rgba(0,0,0,.6); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14.5px/1.5 var(--f-body);padding-inline:16px;padding-block:18px 48px}
+.wrap{max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:flex-end;justify-content:space-between}
+h1{font:700 clamp(28px,4.4vw,42px)/1 var(--f-display);margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0;max-width:70ch}
+.who{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.who img{width:26px;height:26px;border-radius:50%}
+.role{font:600 12px/1 var(--f-body);padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink);white-space:nowrap}
+.role.edit{border-color:var(--ok);color:var(--ok)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.kpi{background:var(--paper);padding:11px 14px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.kpi h3{margin:0;font:600 13px/1.2 var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.kpi .row{display:flex;flex-wrap:wrap;gap:3px 14px;font-variant-numeric:tabular-nums}
+.kpi .row span{display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap}
+.kpi b{font:500 17px/1.2 var(--f-mono)}
+.bar{height:6px;border-radius:3px;background:var(--line);display:flex;overflow:hidden}
+.bar i{display:block;height:100%}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none;transform:translateY(-1px)}
+.d-ok{background:var(--ok)}.d-build{background:var(--build)}.d-plan{background:var(--plan)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.filters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:11px 13px}
+.group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.group>span{font:600 12px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.chip{font:500 13px/1 var(--f-body);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 11px;display:inline-flex;gap:7px;align-items:center;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="false"]{color:var(--muted);opacity:.62}
+.chip[aria-pressed="false"] .sw,.chip[aria-pressed="false"] .dot{filter:grayscale(1);opacity:.5}
+.chip[aria-pressed="true"].solo{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search{flex:1 1 220px;min-width:0;display:flex}
+.search input{width:100%;border:1px solid var(--line);background:var(--raise);border-radius:6px;padding:7px 10px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.main{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:1060px){.main{grid-template-columns:1fr}}
+.mapbox{overflow:hidden}
+.maptools{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(--line)}
+.mapscroll{overflow-x:auto}
+#map{display:block;width:100%;min-width:620px;height:auto;background:var(--water)}
+#map text{font-family:var(--f-display)}
+.feat{cursor:pointer}
+.feat.dim{opacity:.16}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;padding:9px 12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);align-items:center}
+.legend span{display:inline-flex;gap:7px;align-items:center}
+.side{padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.side h2{margin:0;font:700 24px/1.12 var(--f-display);text-wrap:balance}
+.side .lead{margin:0;color:var(--muted)}
+dl.facts{margin:0;display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:7px 12px}
+dl.facts dt{color:var(--muted);font-size:13px}
+dl.facts dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f-body);padding:4px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.p-ok{color:var(--ok)}.p-build{color:var(--build)}.p-plan{color:var(--plan)}
+.tag{font:600 11px/1 var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);padding:3px 6px;border-radius:3px;white-space:nowrap}
+.tag.kz{color:var(--accent);border-color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.srcs{margin:0;padding-left:18px;font-size:13px}
+.hist{margin:0;padding:0;list-style:none;font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.btn{font:600 13px/1 var(--f-body);border-radius:6px;padding:9px 13px;border:1px solid var(--line);background:var(--raise);cursor:pointer;color:var(--ink);display:inline-flex;gap:7px;align-items:center}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn:disabled{opacity:.5;cursor:default}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.mini{font-size:12.5px;color:var(--muted);margin:0}
+.recent{display:flex;flex-direction:column;gap:2px;margin:0;padding:0;list-style:none}
+.recent button{all:unset;cursor:pointer;display:flex;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--line);width:100%}
+.recent button:focus-visible{outline:2px solid var(--accent)}
+.recent small{color:var(--muted);margin-left:auto;white-space:nowrap;font-family:var(--f-mono);font-size:11.5px}
+.export{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:11px 13px}
+.export strong{font:700 16px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase}
+.status-msg{font-size:13px;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:1100px;font-size:13px}
+th{font:600 12px/1.2 var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent)}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.item{cursor:pointer}
+tr.item:hover{background:color-mix(in srgb,var(--hi) 55%,transparent)}
+tr.item.sel{background:var(--hi)}
+td.km{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{font-weight:600}
+td small{display:block;color:var(--muted)}
+.sec-h{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;padding:12px 13px 4px}
+.sec-h h2{margin:0;font:700 24px/1.1 var(--f-display)}
+.note{font-size:12.5px;color:var(--muted);padding:0 13px 10px;margin:0}
+.empty{padding:28px 16px;text-align:center;color:var(--muted)}
+@media (max-width:760px){
+  table{min-width:0}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr.item{border-bottom:1px solid var(--line);padding:8px 2px}
+  td{border:0;padding:2px 10px}
+  td[data-l]::before{content:attr(data-l);display:block;font:600 11px/1.3 var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+}
+/* editor */
+.overlay{position:fixed;inset:0;background:var(--scrim);display:flex;justify-content:flex-end;z-index:20}
+.drawer{background:var(--paper);width:min(560px,100%);height:100%;overflow-y:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px;border-left:1px solid var(--line)}
+.drawer h2{margin:0;font:700 26px/1.1 var(--f-display)}
+.fld{display:flex;flex-direction:column;gap:4px}
+.fld label,.fld .lbl{font-size:12.5px;font-weight:600;color:var(--muted)}
+.fld input,.fld select,.fld textarea{border:1px solid var(--line);background:var(--raise);border-radius:6px;padding:8px 10px;width:100%}
+.fld textarea{min-height:64px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.checks{display:flex;flex-wrap:wrap;gap:6px 14px}
+.checks label{font-weight:500;color:var(--ink);display:inline-flex;gap:6px;align-items:center}
+.hint{font-size:12px;color:var(--muted)}
+.warn{font-size:12.5px;color:var(--danger)}
+.ok-msg{font-size:12.5px;color:var(--ok)}
+.confirm{border:1px solid var(--danger);border-radius:6px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:9px 14px;border-radius:6px;font-size:13px;z-index:30;max-width:calc(100% - 32px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Дороги и связь: Афганистан, Пакистан, Туркменистан</h1>
+      <p class="sub">Железные дороги, автодороги и ВОЛС: действующие, строящиеся и планируемые. Нажмите на линию или строку, чтобы увидеть протяжённость, подрядчика, финансирование и источники.</p>
+    </div>
+    <div class="who" id="who"><span class="role" id="role">Загрузка…</span></div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="panel filters" role="group" aria-label="Фильтры">
+    <div class="group"><span>Слои</span>
+      <button class="chip" id="m-rail" data-k="modes" data-v="rail" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="2.5"/><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="8" stroke-dasharray="1.4 5"/></svg>ЖД</button>
+      <button class="chip" id="m-road" data-k="modes" data-v="road" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="1" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="3.5"/></svg>Авто</button>
+      <button class="chip" id="m-fiber" data-k="modes" data-v="fiber" aria-pressed="true"><svg class="sw" width="24" height="12" aria-hidden="true"><line x1="2" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 5"/></svg>ВОЛС</button>
+    </div>
+    <div class="group"><span>Статус</span>
+      <button class="chip" id="s-ok" data-k="statuses" data-v="ok" aria-pressed="true"><i class="dot d-ok"></i>Действует</button>
+      <button class="chip" id="s-build" data-k="statuses" data-v="build" aria-pressed="true"><i class="dot d-build"></i>Строится</button>
+      <button class="chip" id="s-plan" data-k="statuses" data-v="plan" aria-pressed="true"><i class="dot d-plan"></i>Планируется</button>
+    </div>
+    <div class="group"><span>Страна</span>
+      <button class="chip" id="c-AF" data-k="countries" data-v="AF" aria-pressed="true">Афганистан</button>
+      <button class="chip" id="c-PK" data-k="countries" data-v="PK" aria-pressed="true">Пакистан</button>
+      <button class="chip" id="c-TM" data-k="countries" data-v="TM" aria-pressed="true">Туркменистан</button>
+      <button class="chip" id="c-OT" data-k="countries" data-v="OT" aria-pressed="true">Прочие</button>
+    </div>
+    <div class="group"><button class="chip solo" id="f-kz" aria-pressed="false">Участие Казахстана</button></div>
+    <div class="search"><input id="q" type="search" placeholder="Поиск: объект, подрядчик, город" aria-label="Поиск"></div>
+  </div>
+
+  <div class="main">
+    <div class="panel mapbox">
+      <div class="maptools">
+        <div class="group" role="group" aria-label="Масштаб"><span>Показать</span>
+          <button class="chip solo" id="v-region" data-view="region" aria-pressed="true">Весь регион</button>
+          <button class="chip solo" id="v-AF" data-view="AF" aria-pressed="false">Афганистан</button>
+          <button class="chip solo" id="v-PK" data-view="PK" aria-pressed="false">Пакистан</button>
+          <button class="chip solo" id="v-TM" data-view="TM" aria-pressed="false">Туркменистан</button>
+        </div>
+      </div>
+      <div class="mapscroll"><svg id="map" role="img" aria-label="Карта железных дорог, автодорог и ВОЛС"></svg></div>
+      <div class="legend">
+        <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="2.4"/><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="8" stroke-dasharray="1.4 5.5"/></svg>ЖД</span>
+        <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="3.4"/></svg>автодорога</span>
+        <span><svg width="30" height="12" aria-hidden="true"><line x1="3" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 5"/></svg>ВОЛС</span>
+        <span><svg width="30" height="12" aria-hidden="true"><line x1="1" y1="6" x2="29" y2="6" stroke="var(--muted)" stroke-width="2.6" stroke-dasharray="6 4"/></svg>пунктир — планируется</span>
+        <span><i class="dot d-ok"></i>действует</span><span><i class="dot d-build"></i>строится</span><span><i class="dot d-plan"></i>планируется</span>
+        <span>Трассы схематичные, по опорным городам</span>
+      </div>
+    </div>
+    <aside class="panel side" id="side" aria-live="polite"></aside>
+  </div>
+
+  <div class="panel export">
+    <strong>Выгрузка</strong>
+    <button class="btn" id="x-pptx" type="button">PowerPoint: карта и таблица</button>
+    <button class="btn" id="x-png" type="button">Карта PNG</button>
+    <button class="btn" id="x-xlsx" type="button">Excel: реестр</button>
+    <span class="status-msg" id="x-msg">Выгружается то, что сейчас выбрано в фильтрах.</span>
+  </div>
+
+  <section class="panel">
+    <div class="sec-h"><h2>Реестр объектов</h2><div class="btns"><span class="mini" id="count"></span><a class="btn" href="https://github.com/Zhunusbayev/lines-dashboard/blob/main/data/projects.json" target="_blank" rel="noopener">Данные на GitHub</a><button class="btn primary" id="add" type="button" hidden>Добавить объект</button></div></div>
+    <p class="note">Пакистан: показаны основные магистрали и коридоры к Афганистану, Ирану и Китаю. Сеть страны шире (M-12, M-13, региональные дороги и ветки).</p>
+    <div class="tablewrap">
+      <table id="tbl">
+        <thead><tr>
+          <th style="width:24%"><button data-sort="name">Объект</button></th>
+          <th><button data-sort="country">Страна</button></th>
+          <th><button data-sort="km">Км</button></th>
+          <th><button data-sort="status">Статус</button></th>
+          <th style="width:18%">Подрядчик / исполнитель</th>
+          <th style="width:15%">Финансирование</th>
+          <th style="width:18%">Сроки</th>
+          <th><button data-sort="updated">Обновлено</button></th>
+        </tr></thead>
+        <tbody><tr><td colspan="8" class="empty">Загружаю реестр…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script>
+"use strict";
+let GEO={W:1000,H:878,L0:48.8,T:44.4,kx:1,ky:1,others:"",focus:{}},GAZ={};
+let W=1000,H=878,L0=48.8,T=44.4,kx=1,ky=1;
+const P=([lo,la])=>[(lo-L0)*kx,(T-la)*ky];
+const MODES={rail:"ЖД",road:"Автодорога",fiber:"ВОЛС"};
+const STAT={ok:"Действует",build:"Строится",plan:"Планируется"};
+const STAT_ORDER={ok:0,build:1,plan:2};
+const CTRY={AF:"Афганистан",PK:"Пакистан",TM:"Туркменистан",OT:"Прочие"};
+const CTRY_S={AF:"АФ",PK:"ПК",TM:"ТМ",OT:"Пр."};
+const VIEWS={region:null,AF:[60,75.2,29.2,38.7],PK:[60.4,77.8,23.3,37.2],TM:[51.8,67.2,35.0,43.0]};
+const LBL_POS={serhetabat:["end",-5,-3],torghundi:["start",5,10],herat:["end",-6,4],rozanak:["end",-5,-4],khaf:["end",-5,-3],islamQala:["end",-5,12],
+  mazar:["end",-6,-5],termez:["end",-5,-5],hairatan:["start",5,-5],aqina:["end",-5,-3],andkhoy:["end",-5,10],sheberghan:["start",5,12],peshawar:["start",6,4],
+  islamabad:["start",6,-3],torkham:["end",-5,12],jalalabad:["start",5,-5],kabul:["end",-6,-5],karachi:["start",6,10],hyderabad:["start",6,4],
+  quetta:["start",6,4],chaman:["end",-5,12],spinBoldak:["start",5,12],kandahar:["start",6,10],ashgabat:["start",6,10],mary:["start",6,10],
+  turkmenabat:["start",6,4],turkmenbashi:["start",5,-5],baku:["end",-5,10],sumgait:["end",-5,-3],aktau:["start",5,-3],kashgar:["start",5,4],
+  sukkur:["start",6,4],multan:["start",6,4],lahore:["start",6,4],gwadar:["end",-5,12],zahedan:["end",-5,-3],mashhad:["end",-5,12],
+  khunjerab:["start",5,10],wakhjir:["end",-5,-6],faizabad:["start",5,-5],kunduz:["start",5,10],sherkhan:["start",4,-6],bukhara:["start",5,4],
+  tejen:["end",-5,-5],sarakhs:["end",-5,10],etrek:["start",5,10],gorgan:["start",5,12],bereket:["start",5,-5],balkanabat:["end",-5,-5],
+  dashoguz:["start",5,4],zhanaozen:["start",5,4],taftan:["start",5,12],gilgit:["end",-5,-4],atamyrat:["start",5,-4],salang:["start",5,4],
+  bamyan:["end",-5,12],maimana:["start",5,4],farah:["end",-5,4],zaranj:["end",-5,4],lashkargah:["end",-5,12],ghazni:["start",5,4],kharlachi:["start",5,10],chaghcharan:["start",4,-6],khuzdar:["start",5,4]};
+const CNAMES=[["АФГАНИСТАН",AF=>1,64.3,33.0,"f"],["ПАКИСТАН",0,70.6,28.4,"f"],["ТУРКМЕНИСТАН",0,58.6,39.6,"f"],["ИРАН",0,57.5,33.0,"n"],["УЗБЕКИСТАН",0,63.4,41.6,"n"],["КАЗАХСТАН",0,57.5,43.5,"n"],["ТАДЖИКИСТАН",0,71.4,38.9,"n"],["КИТАЙ",0,77.0,38.4,"n"],["ИНДИЯ",0,75.6,28.6,"n"],["КАСПИЙ",0,51.2,41.3,"w"],["АРАВИЙСКОЕ МОРЕ",0,63.8,23.9,"w"]];
+
+/* ---------- gazetteer lookup ---------- */
+const norm=s=>String(s||"").toLowerCase().replace(/ё/g,"е").replace(/[«»"()]/g,"").replace(/\s+/g," ").trim();
+const NAME2KEY={};
+function indexPlaces(){for(const [k,v] of Object.entries(GAZ)){NAME2KEY[norm(v[2])]=k;for(const a of v[3])NAME2KEY[norm(a)]=k;}}
+function parseRoute(str){
+  const segs=[],unknown=[];
+  for(const part of String(str||"").split(";")){
+    const names=part.split(/\s+[–—-]\s+|\s*[→>]\s*/).map(s=>s.trim()).filter(Boolean);
+    const pts=[];
+    for(const n of names){const k=NAME2KEY[norm(n)];if(k)pts.push(k);else unknown.push(n);}
+    if(pts.length)segs.push(pts);
+  }
+  return {segs,unknown};
+}
+
+/* ---------- state ---------- */
+const state={items:[],ready:false,dbOk:null,modes:new Set(["rail","road","fiber"]),statuses:new Set(["ok","build","plan"]),countries:new Set(["AF","PK","TM","OT"]),kz:false,q:"",view:"region",sel:null,sort:{key:"country",dir:1},canEdit:false,uid:null};
+let db=null,user=null,downloads=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(String(u||""))?String(u):null;
+const fmtKm=n=>String(Math.round(n||0)).replace(/\B(?=(\d{3})+(?!\d))/g," ");
+const fmtDate=iso=>{if(!iso)return "—";const d=new Date(iso);if(isNaN(d))return String(iso);return d.toLocaleDateString("ru-RU",{day:"2-digit",month:"2-digit",year:"numeric"})};
+function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,3200)}
+
+function visible(p){
+  if(!state.modes.has(p.mode)||!state.statuses.has(p.status))return false;
+  if(!(p.countries||[]).some(c=>state.countries.has(c)))return false;
+  if(state.kz&&!p.kz)return false;
+  if(state.q){const hay=norm([p.name,p.sub,p.who,p.money,p.route,p.when].join(" "));if(!norm(state.q).split(" ").every(w=>hay.includes(w)))return false}
+  return true;
+}
+const filtered=()=>state.items.filter(visible);
+
+/* ---------- map ---------- */
+function viewRect(v){
+  if(!VIEWS[v])return [0,0,W,H];
+  const [a,b,c,d]=VIEWS[v];const [x1,y1]=P([a,d]),[x2,y2]=P([b,c]);
+  let w=x2-x1,h=y2-y1;const r=W/H;
+  if(w/h>r){const nh=w/r;return [x1,y1-(nh-h)/2,w,nh]}else{const nw=h*r;return [x1-(nw-w)/2,y1,nw,h]}
+}
+const SCREEN={water:"var(--water)",land:"var(--land)",landF:"var(--land-f)",borderF:"var(--border-f)",borderN:"var(--border-n)",ok:"var(--ok)",build:"var(--build)",plan:"var(--plan)",ink:"var(--ink)",muted:"var(--muted)",halo:"var(--halo)",paper:"var(--paper)",font:"var(--f-display)"};
+const PRINT={water:"#D4E1E6",land:"#E2E6E1",landF:"#EFE9DA",borderF:"#8E8466",borderN:"#BCC5C1",ok:"#147A5C",build:"#C27406",plan:"#6646C2",ink:"#1C2321",muted:"#5A6561",halo:"#F8F9F7",paper:"#F8F9F7",font:"Arial, Helvetica, sans-serif"};
+function routeD(p){const {segs}=parseRoute(p.route);return segs.filter(s=>s.length>1).map(s=>s.map((k,i)=>{const [x,y]=P(GAZ[k]);return (i?"L":"M")+x.toFixed(1)+","+y.toFixed(1)}).join("")).join("")}
+function drawMap(items,{view="region",sel=null,pal=SCREEN,interactive=true}={}){
+  const [vx,vy,vw,vh]=viewRect(view);const k=W/vw;const u=1/k;
+  let h=`<rect x="${vx}" y="${vy}" width="${vw}" height="${vh}" fill="${pal.water}"/>`;
+  h+=`<path d="${GEO.others}" fill="${pal.land}" stroke="${pal.borderN}" stroke-width="${0.8*u}"/>`;
+  for(const c of ["AF","PK","TM"])h+=`<path d="${GEO.focus[c]}" fill="${pal.landF}" stroke="${pal.borderF}" stroke-width="${1.2*u}"/>`;
+  for(const [n,,lo,la,t] of CNAMES){const [x,y]=P([lo,la]);const fs=(t==="f"?15:12)*u;h+=`<text x="${x}" y="${y}" text-anchor="middle" font-family="${pal.font}" font-size="${fs}" font-weight="600" letter-spacing="${3*u}" fill="${pal.muted}" opacity="${t==="f"?0.6:0.5}">${n}</text>`}
+  const order={road:0,rail:1,fiber:2},sto={plan:0,build:1,ok:2};
+  const list=[...items].sort((a,b)=>(order[a.mode]-order[b.mode])||(a.id===sel)-(b.id===sel)||(sto[a.status]-sto[b.status]));
+  const used=new Set();
+  for(const p of list){
+    const d=routeD(p);if(!d)continue;
+    parseRoute(p.route).segs.flat().forEach(k=>used.add(k));
+    const col=pal[p.status]||pal.muted;const plan=p.status==="plan";const isSel=sel===p.id;const w=isSel?1.7:1;
+    let g=`<g class="feat${sel&&!isSel?" dim":""}" data-id="${esc(p.id)}">`;
+    if(p.mode==="road"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${5.6*u*w}" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${3.2*u*w}" stroke-linecap="round" stroke-linejoin="round"${plan?` stroke-dasharray="${6*u} ${4*u}"`:""}/>`}
+    else if(p.mode==="rail"){g+=`<path d="${d}" fill="none" stroke="${pal.halo}" stroke-width="${6*u*w}" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${2.4*u*w}" stroke-linejoin="round"${plan?` stroke-dasharray="${6*u} ${4*u}"`:""}/><path d="${d}" fill="none" stroke="${col}" stroke-width="${8*u*w}" stroke-dasharray="${1.4*u} ${6*u}" stroke-linejoin="round"/>`}
+    else{g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="${4*u*w}" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="${0.1*u} ${5.5*u}" opacity="0.95"/><path d="${d}" fill="none" stroke="${col}" stroke-width="${1*u*w}" stroke-linejoin="round" opacity="0.7"${plan?` stroke-dasharray="${4*u} ${3*u}"`:""}/>`}
+    if(interactive)g+=`<path d="${d}" fill="none" stroke="transparent" stroke-width="${14*u}" stroke-linecap="round"/><title>${esc(p.name)} — ${STAT[p.status]||""}</title>`;
+    h+=g+"</g>";
+  }
+  const zoom=k>=1.5;
+  for(const [key,v] of Object.entries(GAZ)){
+    const tier=v[4];if(!tier||(tier===2&&!zoom))continue;
+    if(tier===2&&!used.has(key))continue;
+    const [x,y]=P(v);if(x<vx||x>vx+vw||y<vy||y>vy+vh)continue;
+    const [anc,dx,dy]=LBL_POS[key]||["start",5,4];const fs=(tier===1?13:11.5)*u;
+    h+=`<circle cx="${x}" cy="${y}" r="${(tier===1?3.2:2.4)*u}" fill="${pal.paper}" stroke="${pal.ink}" stroke-width="${1.1*u}"/>`;
+    h+=`<text x="${x+dx*u}" y="${y+dy*u}" text-anchor="${anc}" font-family="${pal.font}" font-size="${fs}" font-weight="${tier===1?700:500}" fill="${tier===1?pal.ink:pal.muted}" stroke="${pal.halo}" stroke-width="${3*u}" paint-order="stroke" stroke-linejoin="round">${esc(v[2])}</text>`;
+  }
+  // scale bar 200 km
+  const sb=200/111.2*ky;const sx=vx+vw-(sb+24)*1*u- (sb*(u-1)),sy=vy+vh-22*u;
+  const L=sb;h+=`<g transform="translate(${vx+vw-L-20*u},${vy+vh-18*u})"><rect width="${L/2}" height="${4*u}" fill="${pal.ink}"/><rect x="${L/2}" width="${L/2}" height="${4*u}" fill="${pal.paper}" stroke="${pal.ink}" stroke-width="${0.8*u}"/><text x="${L}" y="${-5*u}" text-anchor="end" font-family="${pal.font}" font-size="${11*u}" fill="${pal.muted}">200 км</text></g>`;
+  return {inner:h,vb:`${vx} ${vy} ${vw} ${vh}`};
+}
+function renderMap(){
+  const svg=$("#map");const {inner,vb}=drawMap(filtered(),{view:state.view,sel:state.sel});
+  svg.setAttribute("viewBox",vb);svg.innerHTML=inner;
+}
+$("#map").addEventListener("click",e=>{const g=e.target.closest(".feat");if(g)select(g.dataset.id);});
+
+/* ---------- KPIs ---------- */
+function renderKpis(){
+  const items=filtered();let h="";
+  for(const m of ["rail","road","fiber"]){
+    if(!state.modes.has(m))continue;
+    const sub=items.filter(p=>p.mode===m);const sum=s=>sub.filter(p=>p.status===s).reduce((a,p)=>a+(+p.km||0),0);
+    const tot=sum("ok")+sum("build")+sum("plan")||1;
+    h+=`<div class="kpi"><h3><span>${m==="rail"?"Железные дороги":m==="road"?"Автодороги":"ВОЛС"}, км</span><span>${sub.length} объектов</span></h3>
+    <div class="row">${["ok","build","plan"].map(s=>`<span><i class="dot d-${s}"></i><b>${fmtKm(sum(s))}</b>${STAT[s].toLowerCase()}</span>`).join("")}</div>
+    <div class="bar" aria-hidden="true">${["ok","build","plan"].map(s=>`<i style="width:${sum(s)/tot*100}%;background:var(--${s})"></i>`).join("")}</div></div>`;
+  }
+  h+=`<div class="kpi"><h3><span>Как считать</span></h3><span class="mini">Сумма протяжённости по записям реестра в текущем фильтре. Переходы и подводные кабели без длины не суммируются.</span></div>`;
+  $("#kpis").innerHTML=h;
+}
+
+/* ---------- side panel ---------- */
+let profilesCache={};
+async function names(ids){ids=[...new Set(ids.filter(Boolean))];if(!ids.length||!user)return {};try{profilesCache=Object.assign(profilesCache,await user.profiles(ids))}catch(e){}return profilesCache}
+function whoName(id){return id?String(id):"—"}
+function pill(s){return `<span class="pill p-${s}"><i class="dot d-${s}"></i>${STAT[s]||s}</span>`}
+async function renderSide(){
+  const el=$("#side");const p=state.items.find(x=>x.id===state.sel);
+  if(!p){
+    const items=filtered();
+    const recent=[...state.items].sort((a,b)=>String(b.updatedAt||"").localeCompare(String(a.updatedAt||""))).slice(0,6);
+    await names(recent.map(r=>r.updatedBy));
+    const by=c=>items.filter(p=>(p.countries||[]).includes(c)).length;
+    el.innerHTML=`<h2>Обзор</h2><p class="lead">Выберите линию на карте или строку в реестре, чтобы открыть карточку объекта.</p>
+    <dl class="facts"><dt>В фильтре</dt><dd>${items.length} из ${state.items.length} объектов</dd>
+    <dt>По странам</dt><dd>АФ ${by("AF")} · ПК ${by("PK")} · ТМ ${by("TM")}${by("OT")?" · прочие "+by("OT"):""}</dd>
+    <dt>С участием КЗ</dt><dd>${items.filter(p=>p.kz).length}</dd></dl>
+    <h3 style="margin:6px 0 0;font:700 17px/1.2 var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)">Последние изменения</h3>
+    <ul class="recent">${recent.map(r=>`<li><button type="button" data-id="${esc(r.id)}"><i class="dot d-${esc(r.status)}"></i><span>${esc(r.name)}</span><small>${fmtDate(r.updatedAt)}</small></button></li>`).join("")||'<li class="mini">Пока нет</li>'}</ul>
+    <p class="mini">Нашли неточность или новый статус? Сообщите ответственному за дашборд — данные обновляются в репозитории.</p>`;
+    el.querySelectorAll(".recent button").forEach(b=>b.onclick=()=>select(b.dataset.id));
+    return;
+  }
+  const ids=[p.updatedBy,...(p.history||[]).map(x=>x.by)];await names(ids);
+  const {unknown}=parseRoute(p.route);
+  const srcs=(p.sources||[]).map(s=>{const u=safeUrl(s.u);return `<li>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.t||u)}</a>`:esc(s.t)}</li>`}).join("");
+  el.innerHTML=`<div class="meta">${pill(p.status)}<span class="tag">${MODES[p.mode]||p.mode}</span>${(p.countries||[]).map(c=>`<span class="tag">${CTRY[c]||esc(c)}</span>`).join("")}${p.kz?'<span class="tag kz">Казахстан</span>':""}</div>
+  <h2>${esc(p.name)}</h2>${p.sub?`<p class="lead">${esc(p.sub)}</p>`:""}
+  <dl class="facts">
+   <dt>Протяжённость</dt><dd style="font-family:var(--f-mono)">${esc(p.kmText||fmtKm(p.km))}${/км|переход|систем|подвод|н\/д/.test(p.kmText||"")?"":" км"}</dd>
+   ${p.gauge?`<dt>Колея</dt><dd>${esc(p.gauge)} мм</dd>`:""}
+   <dt>Подрядчик / исполнитель</dt><dd>${esc(p.who||"—")}</dd>
+   <dt>Финансирование</dt><dd>${esc(p.money||"—")}</dd>
+   <dt>Сроки и статус</dt><dd>${esc(p.when||"—")}</dd>
+   <dt>Трасса</dt><dd>${esc(p.route||"—")}${unknown.length?`<br><span class="warn">Не найдены на карте: ${esc(unknown.join(", "))}</span>`:""}</dd>
+   <dt>Обновлено</dt><dd>${fmtDate(p.updatedAt)}, ${esc(whoName(p.updatedBy))}</dd>
+  </dl>
+  ${srcs?`<div><div class="mini" style="margin-bottom:4px">Источники</div><ol class="srcs">${srcs}</ol></div>`:""}
+  ${(p.history||[]).length?`<div><div class="mini" style="margin-bottom:4px">История изменений</div><ul class="hist">${[...p.history].reverse().slice(0,6).map(x=>`<li>${fmtDate(x.at)} · ${esc(whoName(x.by))}: ${esc(x.what)}</li>`).join("")}</ul></div>`:""}
+  <div class="btns">${state.canEdit?'<button class="btn primary" id="edit" type="button">Редактировать</button>':""}<button class="btn" id="close" type="button">К обзору</button></div>
+  `;
+  $("#close").onclick=()=>select(null);
+  if($("#edit"))$("#edit").onclick=()=>openEditor(p);
+}
+
+/* ---------- table ---------- */
+function sortItems(items){
+  const {key,dir}=state.sort;
+  const val=p=>key==="name"?norm(p.name):key==="km"?(+p.km||0):key==="status"?STAT_ORDER[p.status]:key==="updated"?String(p.updatedAt||""):(p.countries||[""])[0]+" "+p.mode+" "+STAT_ORDER[p.status];
+  return [...items].sort((a,b)=>{const x=val(a),y=val(b);return (x<y?-1:x>y?1:0)*dir});
+}
+function renderTable(){
+  const items=sortItems(filtered());const tb=$("#tbl tbody");
+  $("#count").textContent=state.ready?`${items.length} из ${state.items.length}`:"";
+  if(!state.ready){tb.innerHTML=`<tr><td colspan="8" class="empty">${state.dbOk===false?"Не удалось загрузить данные. Обновите страницу.":"Загружаю реестр…"}</td></tr>`;return}
+  if(!state.items.length){tb.innerHTML=`<tr><td colspan="8" class="empty">Реестр пока пуст.${state.canEdit?" Нажмите «Добавить объект», чтобы внести первую запись.":""}</td></tr>`;return}
+  if(!items.length){tb.innerHTML=`<tr><td colspan="8" class="empty">По текущим фильтрам ничего нет. Включите слои, статусы или страны выше.</td></tr>`;return}
+  tb.innerHTML=items.map(p=>`<tr class="item${state.sel===p.id?" sel":""}" data-id="${esc(p.id)}" tabindex="0">
+   <td data-l="Объект"><b>${esc(p.name)}</b>${p.kz?' <span class="tag kz">КЗ</span>':""}<small>${MODES[p.mode]||""}${p.sub?" · "+esc(p.sub):""}</small></td>
+   <td data-l="Страна">${(p.countries||[]).map(c=>CTRY_S[c]||esc(c)).join(", ")}</td>
+   <td class="km" data-l="Км">${esc(p.kmText||fmtKm(p.km))}</td>
+   <td data-l="Статус">${pill(p.status)}</td>
+   <td data-l="Подрядчик">${esc(p.who||"—")}</td><td data-l="Финансирование">${esc(p.money||"—")}</td><td data-l="Сроки">${esc(p.when||"—")}</td>
+   <td data-l="Обновлено" class="km">${fmtDate(p.updatedAt)}</td></tr>`).join("");
+  tb.querySelectorAll("tr.item").forEach(tr=>{tr.onclick=e=>{if(e.target.closest("a"))return;select(tr.dataset.id,true)};tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(tr.dataset.id,true)}}});
+}
+document.querySelectorAll("th button").forEach(b=>b.onclick=()=>{const k=b.dataset.sort;state.sort=state.sort.key===k?{key:k,dir:-state.sort.dir}:{key:k,dir:1};renderTable()});
+
+function renderAll(){renderKpis();renderMap();renderTable();renderSide()}
+function select(id,scroll){
+  state.sel=state.sel===id?null:id;
+  try{history.replaceState(null,"",state.sel?"#"+state.sel:location.pathname+location.search)}catch(e){}
+  renderMap();renderTable();renderSide();
+  if(state.sel&&scroll)$(".main").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+}
+
+/* ---------- filters ---------- */
+document.querySelectorAll(".filters .chip[data-k]").forEach(b=>b.onclick=()=>{
+  const set=state[b.dataset.k],v=b.dataset.v;if(set.has(v)){if(set.size>1)set.delete(v)}else set.add(v);
+  document.querySelectorAll(`.filters .chip[data-k="${b.dataset.k}"]`).forEach(x=>x.setAttribute("aria-pressed",set.has(x.dataset.v)));
+  if(state.sel&&!visible(state.items.find(p=>p.id===state.sel)||{}))state.sel=null;renderAll();
+});
+$("#f-kz").onclick=()=>{state.kz=!state.kz;$("#f-kz").setAttribute("aria-pressed",state.kz);renderAll()};
+$("#q").oninput=e=>{state.q=e.target.value;renderAll()};
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{state.view=b.dataset.view;document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderMap()});
+
+/* ---------- editor ---------- */
+const FIELDS=[["name","Название"],["sub","Описание"],["mode","Вид"],["status","Статус"],["countries","Страны"],["route","Трасса"],["km","Км для итогов"],["kmText","Протяжённость (текст)"],["gauge","Колея"],["who","Подрядчик"],["money","Финансирование"],["when","Сроки"],["kz","Участие КЗ"],["sources","Источники"]];
+function openEditor(p){
+  const isNew=!p;p=p?JSON.parse(JSON.stringify(p)):{mode:"rail",status:"plan",countries:["AF"],sources:[]};
+  const ov=document.createElement("div");ov.className="overlay";
+  ov.innerHTML=`<form class="drawer" id="ed" novalidate>
+   <h2>${isNew?"Новый объект":"Редактирование"}</h2>
+   <div class="fld"><label for="e-name">Название</label><input id="e-name" required value="${esc(p.name||"")}"></div>
+   <div class="fld"><label for="e-sub">Короткое описание</label><input id="e-sub" value="${esc(p.sub||"")}"></div>
+   <div class="row2"><div class="fld"><label for="e-mode">Вид</label><select id="e-mode">${Object.entries(MODES).map(([k,v])=>`<option value="${k}"${p.mode===k?" selected":""}>${v}</option>`).join("")}</select></div>
+   <div class="fld"><label for="e-status">Статус</label><select id="e-status">${Object.entries(STAT).map(([k,v])=>`<option value="${k}"${p.status===k?" selected":""}>${v}</option>`).join("")}</select></div></div>
+   <div class="fld"><span class="lbl">Страны</span><div class="checks">${Object.entries(CTRY).map(([k,v])=>`<label><input type="checkbox" id="e-c-${k}" value="${k}"${(p.countries||[]).includes(k)?" checked":""}> ${v}</label>`).join("")}<label><input type="checkbox" id="e-kz"${p.kz?" checked":""}> Участие Казахстана</label></div></div>
+   <div class="fld"><label for="e-route">Трасса</label><textarea id="e-route" rows="2" list="places">${esc(p.route||"")}</textarea>
+     <span class="hint">Города через « – », отдельные участки через «;». Например: Герат – Шинданд – Фарах; Кандагар – Спин-Болдак</span><span id="e-route-chk"></span></div>
+   <div class="row2"><div class="fld"><label for="e-km">Км для итогов (число)</label><input id="e-km" inputmode="decimal" value="${esc(p.km??"")}"></div>
+   <div class="fld"><label for="e-kmText">Протяжённость, как показывать</label><input id="e-kmText" value="${esc(p.kmText||"")}" placeholder="например, 120 или 573–650"></div></div>
+   <div class="fld"><label for="e-gauge">Колея, мм (для ЖД)</label><input id="e-gauge" value="${esc(p.gauge||"")}"></div>
+   <div class="fld"><label for="e-who">Подрядчик / исполнитель</label><textarea id="e-who" rows="2">${esc(p.who||"")}</textarea></div>
+   <div class="fld"><label for="e-money">Финансирование</label><textarea id="e-money" rows="2">${esc(p.money||"")}</textarea></div>
+   <div class="fld"><label for="e-when">Сроки и статус работ</label><textarea id="e-when" rows="2">${esc(p.when||"")}</textarea></div>
+   <div class="fld"><label for="e-src">Источники: по одному в строке, «название | ссылка»</label><textarea id="e-src" rows="3">${esc((p.sources||[]).map(s=>(s.t||"")+(s.u?" | "+s.u:"")).join("\n"))}</textarea></div>
+   <div class="fld"><label for="e-note">Что изменилось (попадёт в историю)</label><input id="e-note" placeholder="например, «Подписан контракт, обновил подрядчика»"></div>
+   <span id="e-err" class="warn" aria-live="polite"></span>
+   <div class="btns"><button class="btn primary" type="submit" id="e-save">Сохранить</button><button class="btn" type="button" id="e-cancel">Отмена</button>${isNew?"":'<button class="btn danger" type="button" id="e-del" style="margin-left:auto">Удалить</button>'}</div>
+   <div id="e-confirm"></div>
+  </form>`;
+  document.body.appendChild(ov);
+  const close=()=>{ov.remove();document.removeEventListener("keydown",onKey)};
+  const onKey=e=>{if(e.key==="Escape")close()};document.addEventListener("keydown",onKey);
+  ov.addEventListener("click",e=>{if(e.target===ov)close()});
+  $("#e-cancel").onclick=close;
+  const chk=()=>{const {segs,unknown}=parseRoute($("#e-route").value);$("#e-route-chk").innerHTML=unknown.length?`<span class="warn">Нет на карте: ${esc(unknown.join(", "))}. Проверьте написание или опишите трассу ближайшими крупными городами.</span>`:segs.length?`<span class="ok-msg">Трасса распознана: ${segs.length} участ${segs.length===1?"ок":"ка"}.</span>`:""};
+  $("#e-route").oninput=chk;chk();
+  $("#e-name").focus();
+  if($("#e-del"))$("#e-del").onclick=()=>{$("#e-confirm").innerHTML=`<div class="confirm"><span>Удалить «${esc(p.name)}» из реестра для всех?</span><button class="btn danger" type="button" id="e-del2">Да, удалить</button><button class="btn" type="button" id="e-del0">Нет</button></div>`;
+    $("#e-del0").onclick=()=>$("#e-confirm").innerHTML="";
+    $("#e-del2").onclick=async()=>{try{await db.collection("projects").doc(p.id).delete();close();state.sel=null;toast("Объект удалён")}catch(err){$("#e-err").textContent=errText(err)}}};
+  $("#ed").onsubmit=async e=>{
+    e.preventDefault();
+    const n={...p};
+    n.name=$("#e-name").value.trim();n.sub=$("#e-sub").value.trim();n.mode=$("#e-mode").value;n.status=$("#e-status").value;
+    n.countries=Object.keys(CTRY).filter(k=>$("#e-c-"+k).checked);n.kz=$("#e-kz").checked;
+    n.route=$("#e-route").value.trim();const kmv=parseFloat(String($("#e-km").value).replace(/\s/g,"").replace(",","."));n.km=isFinite(kmv)?kmv:0;
+    n.kmText=$("#e-kmText").value.trim()||(n.km?fmtKm(n.km):"");n.gauge=$("#e-gauge").value.trim();
+    n.who=$("#e-who").value.trim();n.money=$("#e-money").value.trim();n.when=$("#e-when").value.trim();
+    n.sources=$("#e-src").value.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{const [t,u]=l.split("|").map(s=>s.trim());return safeUrl(t)&&!u?{t:t,u:t}:{t:t||u||"",u:safeUrl(u)||""}});
+    if(!n.name){$("#e-err").textContent="Укажите название объекта.";return}
+    if(!n.countries.length){$("#e-err").textContent="Отметьте хотя бы одну страну.";return}
+    const changed=FIELDS.filter(([f])=>JSON.stringify(n[f]??"")!==JSON.stringify(p[f]??"")).map(([,l])=>l);
+    if(!isNew&&!changed.length){close();return}
+    const note=$("#e-note").value.trim();
+    const what=isNew?"Создан объект":(note?note+" (":"")+"изменено: "+changed.join(", ").toLowerCase()+(note?")":"");
+    n.updatedAt=new Date().toISOString();n.updatedBy=state.uid||null;
+    n.history=[...(p.history||[]),{at:n.updatedAt,by:state.uid||null,what}].slice(-20);
+    $("#e-save").disabled=true;
+    try{
+      const ref=isNew?db.collection("projects").doc():db.collection("projects").doc(p.id);
+      n.id=ref.id;await ref.set(n);close();state.sel=n.id;toast(isNew?"Объект добавлен":"Изменения сохранены");
+    }catch(err){$("#e-save").disabled=false;$("#e-err").textContent=errText(err)}
+  };
+}
+function errText(err){const c=err&&err.code;return c==="invalid_argument"?"Нет прав на изменение или запись слишком большая. Права на правку выдаёт владелец дашборда.":c==="quota_exceeded"?"Достигнут лимит записей в базе. Удалите устаревшие объекты.":c==="resource_exhausted"?"Слишком много запросов подряд. Подождите минуту и повторите.":"Не удалось сохранить. Проверьте соединение и повторите."}
+$("#add").onclick=()=>openEditor(null);
+
+/* ---------- export ---------- */
+function loadScript(urls,globalName){
+  if(window[globalName])return Promise.resolve(window[globalName]);
+  return urls.reduce((pr,u)=>pr.catch(()=>new Promise((res,rej)=>{const s=document.createElement("script");s.src=u;s.onload=()=>window[globalName]?res(window[globalName]):rej();s.onerror=()=>{s.remove();rej()};document.head.appendChild(s)})),Promise.reject()).catch(()=>{throw new Error("lib")});
+}
+const LIB_XLSX=["https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js","https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"];
+const LIB_PPTX=["https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js","https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"];
+function filterLabel(){
+  const parts=[];
+  parts.push([...state.modes].map(m=>MODES[m]).join(", "));
+  parts.push([...state.statuses].map(s=>STAT[s].toLowerCase()).join(", "));
+  parts.push([...state.countries].map(c=>CTRY[c]).join(", "));
+  if(state.kz)parts.push("с участием Казахстана");if(state.q)parts.push("поиск «"+state.q+"»");
+  return parts.join(" · ");
+}
+const today=()=>new Date().toLocaleDateString("ru-RU");
+const fileDate=()=>new Date().toISOString().slice(0,10);
+function exportSvgString(view){
+  const items=filtered();const {inner,vb}=drawMap(items,{view,pal:PRINT,interactive:false});
+  const [vx,vy,vw,vh]=vb.split(" ").map(Number);const out=1600,oh=Math.round(out*vh/vw);
+  return {svg:`<svg xmlns="http://www.w3.org/2000/svg" width="${out}" height="${oh}" viewBox="${vb}">${inner}</svg>`,w:out,h:oh};
+}
+function svgToPng(svgStr,w,h,scale=2,extra){
+  return new Promise((res,rej)=>{
+    const img=new Image();img.onload=()=>{
+      const pad=extra?Math.round(118*scale):0;
+      const c=document.createElement("canvas");c.width=w*scale;c.height=h*scale+pad;const x=c.getContext("2d");
+      x.fillStyle="#F8F9F7";x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,w*scale,h*scale);
+      if(extra)extra(x,h*scale,scale,c.width);
+      c.toBlob(b=>b?res(b):rej(new Error("png")),"image/png");
+    };img.onerror=()=>rej(new Error("svg"));
+    img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svgStr);
+  });
+}
+function drawLegend(x,y0,s,cw){
+  const pal=PRINT;x.font=`${15*s}px Arial, sans-serif`;x.fillStyle=pal.ink;x.textBaseline="middle";
+  let cx=24*s,cy=y0+26*s;
+  const item=(draw,label)=>{draw(cx,cy);x.fillStyle=pal.ink;x.fillText(label,cx+44*s,cy);cx+=44*s+x.measureText(label).width+28*s};
+  const line=(col,dash,wd)=>(a,b)=>{x.strokeStyle=col;x.lineWidth=wd*s;x.setLineDash(dash.map(d=>d*s));x.beginPath();x.moveTo(a,b);x.lineTo(a+34*s,b);x.stroke();x.setLineDash([])};
+  item(line(pal.ok,[],4),"действует");item(line(pal.build,[],4),"строится");item(line(pal.plan,[7,5],4),"планируется");
+  item((a,b)=>{line(pal.muted,[],2.4)(a,b);line(pal.muted,[1.6,6],9)(a,b)},"ЖД");item(line(pal.muted,[],4),"автодорога");
+  item((a,b)=>{x.lineCap="round";line(pal.muted,[0.1,6],5)(a,b);x.lineCap="butt"},"ВОЛС");
+  x.font=`${13*s}px Arial, sans-serif`;x.fillStyle=pal.muted;
+  x.fillText(`Фильтр: ${filterLabel()}`,24*s,y0+60*s);
+  x.fillText(`Трассы схематичные. Данные на ${today()}, источники в реестре.`,24*s,y0+86*s);
+}
+async function save(filename,data){
+  const blob=data instanceof Blob?data:new Blob([data]);const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);msg("Готово: "+filename);
+}
+function msg(t){$("#x-msg").textContent=t}
+function busy(on,t){["#x-pptx","#x-png","#x-xlsx"].forEach(s=>$(s).disabled=on);if(t)msg(t)}
+$("#x-png").onclick=async()=>{
+  busy(true,"Готовлю карту…");
+  try{const {svg,w,h}=exportSvgString(state.view);const blob=await svgToPng(svg,w,h,1.5,drawLegend);await save(`Карта_коридоры_${fileDate()}.png`,blob)}
+  catch(e){msg("Не удалось нарисовать карту.")}finally{busy(false)}
+};
+function rowsForExport(){
+  return sortItems(filtered()).map(p=>({"Объект":p.name,"Описание":p.sub||"","Вид":MODES[p.mode]||p.mode,"Страны":(p.countries||[]).map(c=>CTRY[c]||c).join(", "),"Статус":STAT[p.status]||p.status,"Протяжённость":p.kmText||"","Км (для итогов)":+p.km||0,"Колея, мм":p.gauge||"","Подрядчик / исполнитель":p.who||"","Финансирование":p.money||"","Сроки":p.when||"","Участие КЗ":p.kz?"да":"","Трасса":p.route||"","Источники":(p.sources||[]).map(s=>(s.t||"")+(s.u?" — "+s.u:"")).join("\n"),"Обновлено":fmtDate(p.updatedAt)}));
+}
+$("#x-xlsx").onclick=async()=>{
+  busy(true,"Готовлю Excel…");
+  try{
+    const XLSX=await loadScript(LIB_XLSX,"XLSX");const rows=rowsForExport();
+    const ws=XLSX.utils.json_to_sheet(rows);ws["!cols"]=[40,40,12,22,13,18,10,10,40,36,36,10,50,60,12].map(w=>({wch:w}));
+    const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,"Реестр");
+    const info=XLSX.utils.aoa_to_sheet([["Дороги и связь: Афганистан, Пакистан, Туркменистан"],["Выгружено",today()],["Фильтр",filterLabel()],["Объектов",rows.length],["Примечание","Протяжённость — по открытым источникам; трассы схематичные. Пакистан — только основные магистрали."]]);
+    XLSX.utils.book_append_sheet(wb,info,"О выгрузке");
+    const buf=XLSX.write(wb,{bookType:"xlsx",type:"array"});
+    await save(`Реестр_коридоры_${fileDate()}.xlsx`,new Blob([buf]));
+  }catch(e){msg(e&&e.message==="lib"?"Не загрузилась библиотека Excel. Проверьте интернет и повторите.":"Не удалось собрать Excel.")}finally{busy(false)}
+};
+const blobToDataUrl=b=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(b)});
+$("#x-pptx").onclick=async()=>{
+  busy(true,"Готовлю презентацию…");
+  try{
+    const PptxGenJS=await loadScript(LIB_PPTX,"PptxGenJS");
+    const items=sortItems(filtered());
+    const pptx=new PptxGenJS();pptx.layout="LAYOUT_WIDE";pptx.title="Дороги и связь: АФ, ПК, ТМ";
+    const F="Arial",INK="1C2321",MUT="5A6561",COL={ok:"147A5C",build:"C27406",plan:"6646C2"};
+    // cover
+    let s=pptx.addSlide();s.background={color:"12232B"};
+    s.addText("Дороги и связь: Афганистан, Пакистан, Туркменистан",{x:0.7,y:2.2,w:11.5,h:1.5,fontFace:F,fontSize:38,bold:true,color:"EEF2EF"});
+    s.addText(`ЖД, автодороги и ВОЛС · данные на ${today()}`,{x:0.7,y:3.7,w:11.5,h:0.5,fontFace:F,fontSize:18,color:"BFD0CB"});
+    s.addText(`Фильтр: ${filterLabel()}`,{x:0.7,y:6.5,w:12,h:0.4,fontFace:F,fontSize:12,color:"8FA6A0"});
+    // map
+    const {svg,w,h}=exportSvgString(state.view);const png=await blobToDataUrl(await svgToPng(svg,w,h,1.5));
+    s=pptx.addSlide();s.background={color:"F8F9F7"};
+    s.addText("Карта",{x:0.5,y:0.25,w:7,h:0.6,fontFace:F,fontSize:26,bold:true,color:INK});
+    const ih=6.45,iw=ih*w/h;s.addImage({data:png,x:0.5,y:0.9,w:iw,h:ih});
+    const rx=0.5+iw+0.35,rw=13.33-rx-0.4;
+    const sum=(m,st)=>items.filter(p=>p.mode===m&&p.status===st).reduce((a,p)=>a+(+p.km||0),0);
+    const kpi=[];for(const m of ["rail","road","fiber"]){if(!state.modes.has(m))continue;kpi.push({text:(m==="rail"?"Железные дороги":m==="road"?"Автодороги":"ВОЛС")+", км\n",options:{bold:true,fontSize:13,color:INK}});
+      for(const st of ["ok","build","plan"])kpi.push({text:`${STAT[st]}: ${fmtKm(sum(m,st))}\n`,options:{fontSize:12,color:COL[st]}});kpi.push({text:"\n",options:{fontSize:6}})}
+    s.addText(kpi,{x:rx,y:0.95,w:rw,h:3.6,fontFace:F,valign:"top"});
+    s.addText([{text:"Цвет — статус: зелёный действует, оранжевый строится, фиолетовый планируется (пунктир).\n",options:{}},{text:"Рисунок линии — вид: ЖД со шпалами, автодорога сплошная, ВОЛС точками.\n",options:{}},{text:"Трассы схематичные.",options:{}}],{x:rx,y:4.7,w:rw,h:2.4,fontFace:F,fontSize:11,color:MUT,valign:"top"});
+    // tables
+    const head=["Объект","Страны","Км","Статус","Подрядчик / исполнитель","Финансирование","Сроки"].map(t=>({text:t,options:{bold:true,color:"FFFFFF",fill:{color:"12232B"}}}));
+    const per=7;
+    for(let i=0;i<items.length;i+=per){
+      s=pptx.addSlide();s.background={color:"F8F9F7"};
+      s.addText(`Реестр объектов${items.length>per?` · ${Math.floor(i/per)+1} из ${Math.ceil(items.length/per)}`:""}`,{x:0.5,y:0.25,w:12,h:0.6,fontFace:F,fontSize:24,bold:true,color:INK});
+      const rows=[head,...items.slice(i,i+per).map(p=>[
+        {text:p.name+(p.sub?"\n"+p.sub:""),options:{bold:false}},
+        (p.countries||[]).map(c=>CTRY_S[c]||c).join(", "),p.kmText||fmtKm(p.km),
+        {text:STAT[p.status]||p.status,options:{color:COL[p.status]||INK,bold:true}},p.who||"—",p.money||"—",p.when||"—"])];
+      s.addTable(rows,{x:0.4,y:0.95,w:12.5,colW:[2.6,0.8,1.0,1.1,2.6,2.2,2.2],fontFace:F,fontSize:9.5,color:INK,border:{type:"solid",pt:0.5,color:"CCD4D0"},valign:"top",autoPage:false});
+      s.addText("Источники и даты проверки — в реестре дашборда",{x:0.4,y:7.05,w:12,h:0.3,fontFace:F,fontSize:9,color:MUT});
+    }
+    const buf=await pptx.write({outputType:"arraybuffer"});
+    await save(`Коридоры_АФ_ПК_ТМ_${fileDate()}.pptx`,new Blob([buf]));
+  }catch(e){msg(e&&e.message==="lib"?"Не загрузилась библиотека PowerPoint. Проверьте интернет и повторите.":"Не удалось собрать презентацию.")}finally{busy(false)}
+};
+
+/* ---------- boot ---------- */
+renderAll();
+(async()=>{
+  try{
+    const get=u=>fetch(u,{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(u);return r.json()});
+    const [geo,places,data]=await Promise.all([get("data/basemap.json"),get("data/places.json"),get("data/projects.json")]);
+    GEO=geo;({W,H,L0,T,kx,ky}=GEO);GAZ=places;indexPlaces();
+    state.items=(data.projects||[]).filter(p=>p&&p.id);state.ready=true;state.dbOk=true;
+    $("#role").textContent="Данные на "+(data.updated?fmtDate(data.updated):"—");
+    if(location.hash.length>1){const h=decodeURIComponent(location.hash.slice(1));if(state.items.some(p=>p.id===h))state.sel=h}
+  }catch(e){state.dbOk=false;state.ready=false;$("#role").textContent="Нет данных"}
+  renderAll();
+})();
+</script>
+
+</body>
+</html>

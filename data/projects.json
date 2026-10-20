@@ -1,0 +1,2801 @@
+{
+  "updated": "2026-10-20",
+  "note": "Реестр объектов. Поля описаны в README.md",
+  "projects": [
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-488",
+      "km": 488,
+      "kmText": "488",
+      "kz": false,
+      "mode": "fiber",
+      "money": "н/д",
+      "name": "Расширение сети Афганистана, 488 км",
+      "route": "Кабул",
+      "sources": [
+        {
+          "t": "TOLOnews: 488 km expansion",
+          "u": "https://tolonews.com/afghanistan-191833"
+        },
+        {
+          "t": "Afghanistan International: expansion suspended (08.2026)",
+          "u": "https://www.afintl.com/en/202608270539"
+        }
+      ],
+      "status": "plan",
+      "sub": "Трассы не раскрыты",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Одобрено; с 27.08.2026 работы приостановлены",
+      "who": "MCIT"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-kzrail",
+      "km": 115,
+      "kmText": "115–120",
+      "kz": true,
+      "mode": "fiber",
+      "money": "В составе $500 млн",
+      "name": "ВОЛС вдоль ж/д Тургунди – Герат",
+      "route": "Тургунди – Санобар – Герат",
+      "sources": [
+        {
+          "t": "Primeminister.kz: Тургунди – Герат",
+          "u": "https://primeminister.kz/en/news/kazakhstan-and-afghanistan-agree-on-turkundi-herat-railway-construction-29970"
+        }
+      ],
+      "status": "plan",
+      "sub": "В составе казахстанского ж/д проекта",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Протокол 24.04.2025; стройка ж/д не начата",
+      "who": "Казахстан"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-other",
+      "km": 0,
+      "kmText": "3 перехода",
+      "kz": false,
+      "mode": "fiber",
+      "money": "—",
+      "name": "ВОЛС Афганистан – Узбекистан, Таджикистан, Иран",
+      "route": "Мазари-Шариф – Хайратон – Термез; Кундуз – Шерхан-Бандар – Нижний Пяндж; Герат – Ислам-Кала",
+      "sources": [
+        {
+          "t": "MCIT: Afghan Fiber Optic Ring (UNESCAP)",
+          "u": "https://www.unescap.org/sites/default/files/Presentation%20by%20MCIT%20On%20fiber%20connectivity%20in%20Afghanistan.pdf"
+        }
+      ],
+      "status": "ok",
+      "sub": "Хайратон (2 × STM-16), Шерхан-Бандар (STM-16), Ислам-Кала (STM-16)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Шерхан-Бандар — первый оптический выход (2009)",
+      "who": "Afghan Telecom"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-pk",
+      "km": 0,
+      "kmText": "2 перехода",
+      "kz": false,
+      "mode": "fiber",
+      "money": "—",
+      "name": "ВОЛС Афганистан – Пакистан",
+      "route": "Торкхам – Ланди-Котал – Пешавар; Спин-Болдак – Чаман – Кветта",
+      "sources": [
+        {
+          "t": "MCIT: Afghan Fiber Optic Ring (UNESCAP)",
+          "u": "https://www.unescap.org/sites/default/files/Presentation%20by%20MCIT%20On%20fiber%20connectivity%20in%20Afghanistan.pdf"
+        }
+      ],
+      "status": "ok",
+      "sub": "Торкхам (40 Гбит/с DWDM + 10 SDH) и Спин-Болдак (2 × STM-64)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; погранпереходы закрыты для торговли с 10.2025",
+      "who": "Afghan Telecom, PTCL"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-ring",
+      "km": 4000,
+      "kmText": "≈4 000 (план 7 000)",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Контракт ZTE $64,5 млн (2006), ВБ",
+      "name": "Национальное кольцо ВОЛС Афганистана",
+      "route": "Кабул – Газни – Кандагар – Лашкаргах – Деларам – Фарах – Герат – Калайи-Нау – Меймене – Шибирган – Мазари-Шариф – Пули-Хумри – Кабул; Кабул – Джелалабад – Торкхам; Кундуз – Талукан – Файзабад",
+      "sources": [
+        {
+          "t": "MCIT: Afghan Fiber Optic Ring (UNESCAP)",
+          "u": "https://www.unescap.org/sites/default/files/Presentation%20by%20MCIT%20On%20fiber%20connectivity%20in%20Afghanistan.pdf"
+        },
+        {
+          "t": "Alemarah: fiber optic network",
+          "u": "https://www.alemarahenglish.af/afghanistans-fiber-optic-network-project-a-key-to-modern-connectivity/"
+        },
+        {
+          "t": "Afghanistan International: expansion suspended (08.2026)",
+          "u": "https://www.afintl.com/en/202608270539"
+        }
+      ],
+      "status": "ok",
+      "sub": "Вдоль кольцевой дороги, 26 провинций",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; +1 800 км за три года; с 27.08.2026 расширение и ремонт приостановлены",
+      "who": "MCIT, Afghan Telecom; оборудование ZTE, Huawei"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-tapi",
+      "km": 153,
+      "kmText": "153",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Средства TAPI",
+      "name": "ВОЛС Серхетабат – Герат вдоль TAPI",
+      "route": "Серхетабат – Герат",
+      "sources": [
+        {
+          "t": "nCa: TAPI new phase (10.2025)",
+          "u": "https://www.newscentralasia.net/2025/10/20/turkmenistans-energy-strategy-in-action-arkadag-berdimuhamedov-launches-new-phase-of-tapi-in-afghanistan/"
+        },
+        {
+          "t": "nCa: Herat talks (08.2026)",
+          "u": "https://www.newscentralasia.net/2026/08/11/tapi-pipeline-logistics-and-education-top-turkmen-afghan-talks-in-herat/"
+        }
+      ],
+      "status": "build",
+      "sub": "Параллельно газопроводу",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт 09.2024; газопровод: 123 км уложено (08.2026)",
+      "who": "Туркменистан, проект TAPI (Türkmengaz)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-tapi2",
+      "km": 700,
+      "kmText": "≈700",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Средства TAPI",
+      "name": "ВОЛС вдоль TAPI по Афганистану",
+      "route": "Герат – Фарах – Деларам – Кандагар – Чаман",
+      "sources": [
+        {
+          "t": "TOLOnews: fiber along TAPI",
+          "u": "https://tolonews.com/business/fiber-optic-line-will-run-alongside-tapi-mcit"
+        }
+      ],
+      "status": "plan",
+      "sub": "5 провинций до Пакистана",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Газопровод дошёл только до Герата",
+      "who": "MCIT"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-tm",
+      "km": 0,
+      "kmText": "2 перехода по STM-16 (2,5 Гбит/с)",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Туркменистан",
+      "name": "ВОЛС Туркменистан – Афганистан",
+      "route": "Серхетабат – Тургунди – Герат; Имамназар – Акина – Андхой – Шибирган",
+      "sources": [
+        {
+          "t": "Консульство ТМ: ВОЛС ТМ – АФ",
+          "u": "https://mazari.tmconsulate.gov.tm/en/news/73648"
+        },
+        {
+          "t": "MCIT: Afghan Fiber Optic Ring (UNESCAP)",
+          "u": "https://www.unescap.org/sites/default/files/Presentation%20by%20MCIT%20On%20fiber%20connectivity%20in%20Afghanistan.pdf"
+        }
+      ],
+      "status": "ok",
+      "sub": "Серхетабат – Тургунди и Имамназар – Акина",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Открыты 14.01.2021",
+      "who": "Türkmenaragatnaşyk / Türkmentelekom, Afghan Telecom"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-f-wakhan",
+      "km": 480,
+      "kmText": "480",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Китай, $53,2 млн обязательств (2017)",
+      "name": "Ваханский коридор Файзабад – Кашгар",
+      "route": "Файзабад – Ишкашим – Сархад – перевал Вахджир – Ташкурган – Кашгар",
+      "sources": [
+        {
+          "t": "AidData: Wakhan fiber",
+          "u": "https://china.aiddata.org/projects/54396/"
+        }
+      ],
+      "status": "plan",
+      "sub": "Выход Афганистана в Китай",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Не построен; дорога до границы КНР открыта 04.10.2026",
+      "who": "Afghan Telecom; Китай"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-andkhoyE",
+      "km": 10,
+      "kmText": "10",
+      "kz": false,
+      "mode": "rail",
+      "money": "Туркменистан",
+      "name": "Андхой-Северный – Андхой-Восточный",
+      "route": "Андхой – Андхой-Восточный",
+      "sources": [
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "build",
+      "sub": "Продление линии из Туркменистана",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "MoU о завершении — февраль 2025",
+      "who": "Туркменистан"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-aqina",
+      "km": 33,
+      "kmText": "85 в ТМ + 33 в АФ",
+      "kz": false,
+      "mode": "rail",
+      "money": "Туркменистан",
+      "name": "Керки – Имамназар – Акина – Андхой",
+      "route": "Керки – Имамназар – Акина – Андхой",
+      "sources": [
+        {
+          "t": "Railway Gazette: Aqina – Andkhoy",
+          "u": "https://www.railwaygazette.com/infrastructure/railway-opening-forges-bonds-of-friendship-between-afghanistan-and-turkmenistan/58244.article"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Первый участок ТАТ (Туркменистан – Афганистан – Таджикистан)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Акина — ноябрь 2016; Андхой — январь 2021",
+      "who": "Туркменистан: финансирование, проект, стройка"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-hairatan",
+      "km": 75,
+      "kmText": "75",
+      "kz": false,
+      "mode": "rail",
+      "money": "ADB (2010–2011); модернизация 2026 — $6,3 млн",
+      "name": "Термез – Хайратон – Мазари-Шариф",
+      "route": "Термез – Хайратон – Найбабад – Мазари-Шариф",
+      "sources": [
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        },
+        {
+          "t": "Railway Gazette: Hairatan – Mazar capacity (05.2026)",
+          "u": "https://www.railwaygazette.com/freight/2026/05/29/afghanistans-rail-freight-capacity-boosted-with-opening-of-additional-terminal/"
+        }
+      ],
+      "status": "ok",
+      "sub": "Мост Дружбы через Амударью, до аэропорта Мазари-Шарифа",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Построена 2010–2011; май 2026 открыт 5-й терминал, контракт UTY продлён",
+      "who": "Узбекистан Темир Йуллари (UTY), эксплуатация через Sogdiana Trans"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1435",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-herat",
+      "km": 47,
+      "kmText": "47,3",
+      "kz": false,
+      "mode": "rail",
+      "money": "$54,6 млн; оплата через концессию на свинец-цинк Сарсархак",
+      "name": "Робат-Парьян – Герат (уч. 4, фаза 2)",
+      "route": "Робат-Парьян – Герат",
+      "sources": [
+        {
+          "t": "Railway Gazette: final phase of Herat railway",
+          "u": "https://www.railwaygazette.com/infrastructure/afghanistan-begins-construction-of-final-phase-of-the-herat-railway/69607.article"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "build",
+      "sub": "До промзоны и аэропорта Герата",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Контракт 28.03.2024; старт 14.09.2025; срок ≈2 года",
+      "who": "Gamma Group (АФ) при поддержке РЖД Интернешнл"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1435/1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-heratkandahar",
+      "km": 738,
+      "kmText": "737,5",
+      "kz": false,
+      "mode": "rail",
+      "money": "Проектирование 264 млн афгани; стройка не профинансирована",
+      "name": "Герат – Кандагар",
+      "route": "Герат – Шинданд – Фарах – Горгори – Лашкаргах – Кандагар",
+      "sources": [
+        {
+          "t": "Railway Gazette: Herat – Kandahar design contracts",
+          "u": "https://www.railwaygazette.com/infrastructure/herat-kandahar-railway-design-contracts-awarded/68284.article"
+        },
+        {
+          "t": "Railway Gazette: Hairatan – Mazar capacity (05.2026)",
+          "u": "https://www.railwaygazette.com/freight/2026/05/29/afghanistans-rail-freight-capacity-boosted-with-opening-of-additional-terminal/"
+        }
+      ],
+      "status": "plan",
+      "sub": "Через Шинданд, Фарах, Горгори, Лашкаргах",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Контракты 06.02.2025; изыскания 878 км Тургунди – Спин-Болдак близки к завершению (05.2026)",
+      "who": "Проект: Afghan-German Construction…, Hask Engineering, Arya Khan (5 контрактов)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1435",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-heratmazar",
+      "km": 657,
+      "kmText": "657 (Иран: ≈800)",
+      "kz": false,
+      "mode": "rail",
+      "money": "≈$780 млн; схема «дорога за полезные ископаемые»",
+      "name": "Герат – Мазари-Шариф",
+      "route": "Санобар – Бала-Мургаб – Кайсар – Меймене – Шибирган – Найбабад",
+      "sources": [
+        {
+          "t": "Iran Daily: Herat – Mazar railway",
+          "u": "https://newspaper.irandaily.ir/8179/3/25501"
+        },
+        {
+          "t": "CACI Analyst: Herat – Mazar railway",
+          "u": "https://www.cacianalyst.org/"
+        },
+        {
+          "t": "Jamestown: Herat – Mazar-i-Sharif",
+          "u": "https://jamestown.org/uzbekistan-may-benefit-from-herat-to-mazar-i-sharif-railway-project/"
+        }
+      ],
+      "status": "build",
+      "sub": "Западный ход, часть коридора «Пять стран»",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Июль–август 2026 Иран объявил о начале работ; прогресс не раскрыт",
+      "who": "Иранские компании; ТЭО $10 млн с участием Турции"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1435",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-khaf",
+      "km": 62,
+      "kmText": "62 в АФ (всего 225)",
+      "kz": false,
+      "mode": "rail",
+      "money": "Иран, ≈$665 млн на участки 1–3",
+      "name": "Хаф – Розанак (Хаф – Герат, участки 1–3)",
+      "route": "Хаф – Санган – Шамтиг – Розанак",
+      "sources": [
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        },
+        {
+          "t": "Seetao: Khaf – Herat railway",
+          "u": "https://www.seetao.com/details/53160.html"
+        },
+        {
+          "t": "CACI Analyst: Herat – Mazar railway",
+          "u": "https://www.cacianalyst.org/"
+        }
+      ],
+      "status": "ok",
+      "sub": "Иран → граница Шамтиг → Розанак",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Участок 3 — декабрь 2020; грузооборот 03.2025–03.2026 >640 тыс. т",
+      "who": "Иран (RAI, CDTIC)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-kz",
+      "km": 91,
+      "kmText": "113–120 всего, с учётом 22 км",
+      "kz": true,
+      "mode": "rail",
+      "money": "Казахстан — $500 млн",
+      "name": "Санобар – Герат (казахстанский проект)",
+      "route": "Санобар – Герат",
+      "sources": [
+        {
+          "t": "IRJ: Afghanistan and Kazakhstan agree new line",
+          "u": "https://www.railjournal.com/regions/asia/afghanistan-and-kazakhstan-agree-to-build-new-line/"
+        },
+        {
+          "t": "Primeminister.kz: Тургунди – Герат",
+          "u": "https://primeminister.kz/en/news/kazakhstan-and-afghanistan-agree-on-turkundi-herat-railway-construction-29970"
+        },
+        {
+          "t": "Times of Central Asia: Turgundi – Herat",
+          "u": "https://timesca.com/trans-afghan-corridor-becomes-central-asias-new-trade-gateway-amid-competition/"
+        }
+      ],
+      "status": "plan",
+      "sub": "Первый этап коридора Тургунди – Герат – Кандагар – Спин-Болдак",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Протокол 24.04.2025, соглашение 11.07.2025; вдоль линии ВОЛС и ТЛЦ в Герате",
+      "who": "Казахская компания (не названа); проект — Bakhtar; обсуждается СП ж/д КЗ–АФ–ТМ в МФЦА"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1435",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-robat",
+      "km": 43,
+      "kmText": "43",
+      "kz": true,
+      "mode": "rail",
+      "money": "Бюджет Афганистана, контракт $58,5 млн (2019)",
+      "name": "Розанак – Робат-Парьян (уч. 4, фаза 1)",
+      "route": "Розанак – Робат-Парьян",
+      "sources": [
+        {
+          "t": "Kursiv: Integra Construction KZ, Хаф – Герат (09.2026)",
+          "u": "https://kz.kursiv.media/2026-09-30/zhnb-kompaniya-postroila-uchastok-zheleznuyu-dorogu-v-afganistane/"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выход к западной окраине Герата",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Контракт 12.12.2019; открыт 29.09.2026",
+      "who": "Integra Construction KZ (Казахстан)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-sanobar",
+      "km": 22,
+      "kmText": "22",
+      "kz": false,
+      "mode": "rail",
+      "money": "≈$40 млн вместе с терминалом",
+      "name": "Тургунди – Санобар",
+      "route": "Тургунди – Санобар",
+      "sources": [
+        {
+          "t": "Andrew Grantham: Towraghondi – Sanobar",
+          "u": "https://www.andrewgrantham.co.uk/afghanistan/tag/towraghondi/"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "build",
+      "sub": "Первый отрезок Тургунди – Герат + терминал Тургунди",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт 11.09.2024; MoU о продолжении — февраль 2025",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-sheb",
+      "km": 55,
+      "kmText": "55",
+      "kz": false,
+      "mode": "rail",
+      "money": "Не определено",
+      "name": "Андхой – Шибирган",
+      "route": "Андхой-Восточный – Шибирган",
+      "sources": [
+        {
+          "t": "Bourse & Bazaar: Andkhoy – Sheberghan",
+          "u": "https://www.bourseandbazaar.org/articles/2025/5/5/afghan-authorities-accelerate-push-for-road-and-rail-projects"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "plan",
+      "sub": "Продолжение ТАТ к Мазари-Шарифу",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Договорённость — февраль 2025",
+      "who": "Туркменистан — изыскания и проект"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-spin",
+      "km": 96,
+      "kmText": "96 + 12 до Чамана",
+      "kz": false,
+      "mode": "rail",
+      "money": "Не определено",
+      "name": "Кандагар – Спин-Болдак – Чаман",
+      "route": "Кандагар – Спин-Болдак – Чаман",
+      "sources": [
+        {
+          "t": "Railway Gazette: Kandahar – Spin Boldak survey",
+          "u": "https://www.railwaygazette.com/infrastructure/afghan-railway-extension-surveys-underway/66569.article"
+        },
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "plan",
+      "sub": "Выход к ж/д Пакистана (колея 1676 мм)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Изыскания 05.2024; участок до Чамана одобрен в 2012, не начат",
+      "who": "AfRA — первичные изыскания"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-tat",
+      "km": 160,
+      "kmText": "≈160 (оценка)",
+      "kz": false,
+      "mode": "rail",
+      "money": "Не определено",
+      "name": "Мазари-Шариф – Кундуз – Шерхан-Бандар",
+      "route": "Мазари-Шариф – Хульм – Кала-и-Заль – Шерхан-Бандар",
+      "sources": [
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        }
+      ],
+      "status": "plan",
+      "sub": "Выход ТАТ на Таджикистан",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Концепция с 2013 года",
+      "who": "Нет исполнителя; таджикский участок 51 км — ТЭО KOICA (2024)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-torghundi",
+      "km": 10,
+      "kmText": "≈10 (≈4 в АФ)",
+      "kz": false,
+      "mode": "rail",
+      "money": "Туркменистан",
+      "name": "Серхетабат – Тургунди",
+      "route": "Серхетабат – Тургунди",
+      "sources": [
+        {
+          "t": "Rail transport in Afghanistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Afghanistan"
+        },
+        {
+          "t": "Посольство Туркменистана: Серхетабат – Тургунди",
+          "u": "https://kyrgyzstan.tmembassy.gov.tm/en/news/10335"
+        }
+      ],
+      "status": "ok",
+      "sub": "Советская линия, восстановлена Туркменистаном",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "1960; реконструкция 2017–2018",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-r-uap",
+      "km": 647,
+      "kmText": "573–650",
+      "kz": false,
+      "mode": "rail",
+      "money": "Оценка выросла с $4,6 до >$7 млрд; не закрыто",
+      "name": "Трансафганская (Узбекистан – Афганистан – Пакистан)",
+      "route": "Найбабад – Пули-Хумри – Шибар – Майдан-Шахр – Пули-Алам – Харлачи",
+      "sources": [
+        {
+          "t": "Sputnik: UAP railway (09.2026)",
+          "u": "https://sputnikglobe.com/20260929/uzbekistan-afghanistan-pakistan-railway-what-is-known-about-the-project-1124810304.html"
+        },
+        {
+          "t": "AtlasPress: UZ–PK fieldwork",
+          "u": "https://atlaspress.news/en/2026/02/04/uzbekistan-pakistan-launch-afghan-trans-railway-project/"
+        },
+        {
+          "t": "Railway Gazette: gauge for Trans-Afghan railway",
+          "u": "https://www.railwaygazette.com/infrastructure/gauge-selected-for-trans-afghanistan-railway/69806.article"
+        }
+      ],
+      "status": "plan",
+      "sub": "Найбабад – Пули-Хумри – Шибар – Майдан-Шахр – Логар – Харлачи",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Рамочное соглашение 17.07.2025; ТЭО до конца 2026; стройка не раньше 2П 2027",
+      "who": "ТЭО: UTY + РЖД; интерес Казахстана, ОАЭ, Катара"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-606",
+      "km": 218,
+      "kmText": "218",
+      "kz": false,
+      "mode": "road",
+      "money": "Индия",
+      "name": "Деларам – Заранд (трасса 606)",
+      "route": "Деларам – Заранд",
+      "sources": [
+        {
+          "t": "Route 606 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Route_606_(Afghanistan)"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выход к Ирану и Чабахару",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Открыта 22.01.2009",
+      "who": "Индия (BRO)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-bamyan",
+      "km": 180,
+      "kmText": "≈180",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кабул – Майдан-Шахр – Бамиан",
+      "route": "Кабул – Майдан-Шахр – Бамиан",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Через перевал Хаджигак",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-ew",
+      "km": 720,
+      "kmText": "≈720",
+      "kz": false,
+      "mode": "road",
+      "money": "Лоты МОР; Герат – Чешт — Италия (2017)",
+      "name": "Коридор Восток – Запад",
+      "route": "Герат – Обе – Чешт-и-Шариф – Чагчаран – Лал – Панджаб – Гардандивал – Майдан-Шахр",
+      "sources": [
+        {
+          "t": "Bakhtar: Herat – Chesht-e-Sharif",
+          "u": "https://www.bakhtarnews.af/en/contract-on-construction-of-herat-chasht-e-sharif-road-signed/"
+        }
+      ],
+      "status": "build",
+      "sub": "Герат – Чешт – Чагчаран – Панджаб – Майдан-Шахр",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Готов частично",
+      "who": "Афганские подрядчики по лотам"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-faiz",
+      "km": 330,
+      "kmText": "≈330",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Файзабад – Ишкашим – Сархад",
+      "route": "Файзабад – Ишкашим – Газхан – Сархад",
+      "sources": [
+        {
+          "t": "Pajhwok: Wakhan road (10.2026)",
+          "u": "https://pajhwok.com/2026/10/04/wakhan-road-to-china-opens-govt-stresses-economic-development-security/"
+        }
+      ],
+      "status": "ok",
+      "sub": "Грунтовая дорога вдоль Ваханского коридора",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует сезонно",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-hk",
+      "km": 557,
+      "kmText": "≈557",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кольцевая: Герат – Кандагар",
+      "route": "Герат – Шинданд – Фарахруд – Деларам – Гиришк – Кандагар",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Через Шинданд, Деларам, Гиришк",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Исторически СССР; реконструкция USAID, Louis Berger"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-kjt",
+      "km": 225,
+      "kmText": "≈225",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кабул – Джелалабад – Торкхам",
+      "route": "Кабул – Джелалабад – Торкхам",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Главный выход к Пешавару",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; погранпереход закрыт для торговли с 10.2025",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-kk",
+      "km": 483,
+      "kmText": "483",
+      "kz": false,
+      "mode": "road",
+      "money": "Госбюджет и сборы",
+      "name": "Реконструкция Кабул – Кандагар",
+      "route": "Кабул – Майдан-Шахр – Газни – Калат – Кандагар",
+      "sources": [
+        {
+          "t": "TOLOnews: Kabul – Kandahar",
+          "u": "https://tolonews.com/afghanistan-184206"
+        }
+      ],
+      "status": "build",
+      "sub": "Через Майдан-Шахр, Газни, Калат",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Поэтапно с 2023; 2025 — обочины 96 км, расширение в Газни",
+      "who": "7 афганских компаний"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-ksb",
+      "km": 100,
+      "kmText": "≈100",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кандагар – Спин-Болдак",
+      "route": "Кандагар – Спин-Болдак",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выход на Чаман и Кветту",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-laman",
+      "km": 110,
+      "kmText": "≈110",
+      "kz": false,
+      "mode": "road",
+      "money": "$60,8 млн за 52 км",
+      "name": "Кольцевая: Ламан – Герат",
+      "route": "Ламан – Карух – Герат",
+      "sources": [
+        {
+          "t": "Bakhtar: Armalak – Laman",
+          "u": "https://www.bakhtarnews.af/en/ring-road-section-in-western-of-the-country-completed"
+        }
+      ],
+      "status": "ok",
+      "sub": "Включая Армалак – Ламан (52 км)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Завершён в 2025",
+      "who": "Последние 11 км — Cinderella Construction"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-north",
+      "km": 370,
+      "kmText": "≈370",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кольцевая: Мазари-Шариф – Шибирган – Меймене – Кайсар",
+      "route": "Мазари-Шариф – Шибирган – Андхой – Меймене – Кайсар",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Северный сектор NH-01",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Построена при поддержке ADB и доноров"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-northexits",
+      "km": 550,
+      "kmText": "≈70 + ≈170 + ≈310",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Хайратон – Мазари-Шариф; Пули-Хумри – Шерхан-Бандар; Кундуз – Файзабад",
+      "route": "Хайратон – Мазари-Шариф; Пули-Хумри – Кундуз – Шерхан-Бандар; Кундуз – Талукан – Файзабад",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Северные выходы к Узбекистану и Таджикистану",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-ns",
+      "km": 330,
+      "kmText": "≈330",
+      "kz": false,
+      "mode": "road",
+      "money": "ADB",
+      "name": "Мазари-Шариф – Дара-и-Суф – Якавланг – Бамиан",
+      "route": "Мазари-Шариф – Дара-и-Суф – Якавланг – Бамиан",
+      "sources": [
+        {
+          "t": "ADB: North–South Corridor",
+          "u": "https://www.adb.org/projects/39467-013/main"
+        }
+      ],
+      "status": "build",
+      "sub": "Коридор Север – Юг ADB",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Средний участок с 2017, статус не подтверждён",
+      "who": "Подрядчики ADB"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-pamir",
+      "km": 150,
+      "kmText": "150",
+      "kz": false,
+      "mode": "road",
+      "money": "Бюджет ИЭА",
+      "name": "Большая Памирская дорога",
+      "route": "Газхан – озеро Зоркуль",
+      "sources": [
+        {
+          "t": "TOLOnews: Grand Pamir Road",
+          "u": "https://tolonews.com/afghanistan-195749"
+        }
+      ],
+      "status": "build",
+      "sub": "Газхан – озеро Зоркуль",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Сентябрь 2025: готовность 30%",
+      "who": "Министерство обороны"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-ql",
+      "km": 233,
+      "kmText": "233 (в работе 50 + 65)",
+      "kz": false,
+      "mode": "road",
+      "money": "Участок 50 км — 4,6 млрд афгани (≈$71 млн); 1-й участок — ADB >$36 млн",
+      "name": "Кайсар – Ламан (звено кольцевой)",
+      "route": "Кайсар – Мукур – Бала-Мургаб – Ламан",
+      "sources": [
+        {
+          "t": "Xinhua: Qaisar – Laman (04.2026)",
+          "u": "http://www.china.org.cn/world/Off_the_Wire/2026-04/18/content_118444974.shtml"
+        }
+      ],
+      "status": "build",
+      "sub": "Фарьяб – Бадгис; участок Мукур – Бала-Мургаб 50 км",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт 18.04.2026, срок 3 года",
+      "who": "Частная афганская компания (не раскрыта)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-salang",
+      "km": 80,
+      "kmText": "≈80 (Юж. Саланг 15)",
+      "kz": false,
+      "mode": "road",
+      "money": "1,252 млрд афгани за 15 км",
+      "name": "Реконструкция Саланга",
+      "route": "Доши – Хинджан – Северный Саланг – Саланг – Оланг – Джабаль-Сарадж",
+      "sources": [
+        {
+          "t": "Xinhua: Salang contract (06.2026)",
+          "u": "https://english.news.cn/asiapacific/20260623/273cb0728f004218964573b3605bcc4b/c.html"
+        }
+      ],
+      "status": "build",
+      "sub": "Южный Саланг, Северный Саланг, Хинджан – Доши",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Контракт 23.06.2026",
+      "who": "Частная компания; ранее 3 афганские компании"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-salangring",
+      "km": 420,
+      "kmText": "≈420",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Кольцевая: Кабул – Саланг – Мазари-Шариф",
+      "route": "Кабул – Чарикар – Джабаль-Сарадж – Оланг – Саланг – Северный Саланг – Хинджан – Пули-Хумри – Айбак – Хульм – Мазари-Шариф",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        },
+        {
+          "t": "Xinhua: Salang contract (06.2026)",
+          "u": "https://english.news.cn/asiapacific/20260623/273cb0728f004218964573b3605bcc4b/c.html"
+        }
+      ],
+      "status": "ok",
+      "sub": "Через тоннель Саланг (2,67 км)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; Саланг в реконструкции",
+      "who": "МОР Афганистана"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-thrcp",
+      "km": 152,
+      "kmText": "152",
+      "kz": false,
+      "mode": "road",
+      "money": "$170 млн (ВБ $150 млн); приостановлено с 2021",
+      "name": "Баглан (Доши) – Бамиан",
+      "route": "Доши – Шибар – Бамиан",
+      "sources": [
+        {
+          "t": "MoPW: Trans-Hindukush",
+          "u": "https://mopw.gov.af/en/thrcp"
+        }
+      ],
+      "status": "plan",
+      "sub": "Trans-Hindukush, обход Саланга",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Не реализован",
+      "who": "МОР, проект THRCP"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-wakhan",
+      "km": 121,
+      "kmText": "121",
+      "kz": false,
+      "mode": "road",
+      "money": "365 млн афгани (≈$5 млн)",
+      "name": "Вахан: Сархад – граница КНР",
+      "route": "Сархад – Базай-Гумбад – перевал Вахджир",
+      "sources": [
+        {
+          "t": "Pajhwok: Wakhan road (10.2026)",
+          "u": "https://pajhwok.com/2026/10/04/wakhan-road-to-china-opens-govt-stresses-economic-development-security/"
+        }
+      ],
+      "status": "ok",
+      "sub": "Гравийная дорога, 66 водопропусков, 4 моста",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Открыта 04.10.2026; КНР переход не открыла",
+      "who": "MRRD; 2-я фаза 71 км — афганская компания"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "AF",
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "af-a-west",
+      "km": 240,
+      "kmText": "≈120 + ≈120",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Герат – Ислам-Кала; Герат – Тургунди",
+      "route": "Ислам-Кала – Герат; Герат – Тургунди",
+      "sources": [
+        {
+          "t": "Afghanistan Ring Road — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Afghanistan_Ring_Road"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выходы к Ирану и Туркменистану",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-f-pcofc",
+      "km": 820,
+      "kmText": "820",
+      "kz": false,
+      "mode": "fiber",
+      "money": "$44 млн, Exim Bank of China под 2%",
+      "name": "Pak-China OFC Хунджераб – Равалпинди",
+      "route": "Хунджераб – Гилгит – Райкот – Такот – Хасан-Абдал – Исламабад",
+      "sources": [
+        {
+          "t": "Pakistan-China Fiber Optic Project — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pakistan-China_Fiber_Optic_Project"
+        }
+      ],
+      "status": "ok",
+      "sub": "Наземный выход Пакистана в Китай",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "С 13.07.2018",
+      "who": "SCO; Huawei, China Telecom"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-f-pcofc2",
+      "km": 0,
+      "kmText": "н/д",
+      "kz": false,
+      "mode": "fiber",
+      "money": "≈Rs 38 млрд",
+      "name": "Pak-China OFC, фаза II: Равалпинди – Карачи (Гвадар)",
+      "route": "Исламабад – Лахор – Мултан – Суккур – Карачи – Гвадар",
+      "sources": [
+        {
+          "t": "Business Recorder: Pak-China OFC Phase II",
+          "u": "https://www.brecorder.com/news/40132139"
+        },
+        {
+          "t": "Pakistan-China Fiber Optic Project — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pakistan-China_Fiber_Optic_Project"
+        }
+      ],
+      "status": "plan",
+      "sub": "Продление до портов",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Сроки сдвигаются, проект дорожает",
+      "who": "SCO"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-f-smw6",
+      "km": 0,
+      "kmText": "подводные",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Консорциумы",
+      "name": "SMW-6 и 2Africa в Карачи",
+      "route": "Карачи – Аравийское море (кабели)",
+      "sources": [
+        {
+          "t": "DCD: SMW-6 lands in Pakistan",
+          "u": "https://www.datacenterdynamics.com/en/news/seamewe-6-subsea-cable-lands-in-pakistan/"
+        },
+        {
+          "t": "ProPakistani: SMW-6 onboarding",
+          "u": "https://propakistani.pk/2025/11/22/pakistan-is-now-officially-connected-to-one-of-the-worlds-fastest-undersea-cables/"
+        }
+      ],
+      "status": "build",
+      "sub": "Высажены на станции TWA, Хокс-Бей",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Высажены в 2025; SMW-6 в работу в 2026; 2Africa ждёт из-за Красного моря",
+      "who": "Transworld Associates"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-f-sub",
+      "km": 0,
+      "kmText": "9 систем",
+      "kz": false,
+      "mode": "fiber",
+      "money": "Консорциумы",
+      "name": "Подводные кабели Пакистана (Карачи, Гвадар)",
+      "route": "Карачи – Аравийское море (кабели); Гвадар – Оманский залив (кабели)",
+      "sources": [
+        {
+          "t": "Submarine Networks: Pakistan",
+          "u": "https://www.submarinenetworks.com/en/stations/asia/pakistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "PTCL: SMW-4, IMEWE, AAE-1; TWA: TW1, SMW-5; Cybernet: PEACE",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "≈13,2 Тбит/с до SMW-6",
+      "who": "PTCL, Transworld Associates, Cybernet"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "1676",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-r-ml1",
+      "km": 1687,
+      "kmText": "1 687–1 872",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "ML-1 Карачи – Лахор – Пешавар",
+      "route": "Карачи – Хайдарабад – Навабшах – Рохри – Мултан – Лахор – Исламабад – Атток – Ношера – Пешавар",
+      "sources": [
+        {
+          "t": "Karachi–Peshawar Line — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Karachi%E2%80%93Peshawar_Line"
+        }
+      ],
+      "status": "ok",
+      "sub": "Главная магистраль Pakistan Railways",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Pakistan Railways"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "1676",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-r-ml1up",
+      "km": 480,
+      "kmText": "480 (фаза 1)",
+      "kz": false,
+      "mode": "rail",
+      "money": "$2,5 млрд; ADB ≈$2 млрд, ко-финансирование AIIB, ВБ, IsDB",
+      "name": "Модернизация ML-1, фаза 1: Карачи – Рохри",
+      "route": "Карачи – Хайдарабад – Навабшах – Рохри",
+      "sources": [
+        {
+          "t": "Dawn: ML-1 Karachi – Rohri (08.2026)",
+          "u": "https://www.dawn.com/news/2023146"
+        },
+        {
+          "t": "ProPakistani: $10 bn ML-1 (07.2026)",
+          "u": "https://propakistani.pk/2026/07/01/govt-to-begin-first-phase-of-10-billion-railway-project-next-year/"
+        }
+      ],
+      "status": "plan",
+      "sub": "До 160 км/ч; вся ML-1 1 680 км, ≈$10 млрд",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт работ — январь 2027, срок 2,5–3 года",
+      "who": "Pakistan Railways; подрядчики не выбраны (рыночные консультации 08.09.2026)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "1676",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-r-ml2",
+      "km": 1250,
+      "kmText": "≈1 250",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "ML-2 Котри – Атток",
+      "route": "Котри – Даду – Якобабад – Дера-Гази-Хан – Кундиан – Атток",
+      "sources": [
+        {
+          "t": "Dawn: ML-2 freight corridor (02.2026)",
+          "u": "https://www.dawn.com/news/1972786"
+        }
+      ],
+      "status": "ok",
+      "sub": "Западная магистраль по правому берегу Инда",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; план выделенного грузового коридора с NLC (≈$2 млрд, стадия ТЭО)",
+      "who": "Pakistan Railways"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "1676",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-r-ml3",
+      "km": 996,
+      "kmText": "996 до Тафтана",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "ML-3 Рохри – Сиби – Кветта – Тафтан",
+      "route": "Рохри – Якобабад – Сиби – Кветта – Далбандин – Тафтан – Захедан; Кветта – Чаман",
+      "sources": [
+        {
+          "t": "Dawn: Reko Diq loan for ML-3 (06.2026)",
+          "u": "https://www.dawn.com/news/2011499/390m-reko-diq-bridge-loan-for-ml-3"
+        },
+        {
+          "t": "Quetta–Taftan Line — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Quetta%E2%80%93Taftan_Line"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выход на Иран (Захедан); ветка на Чаман",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Pakistan Railways"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "1676",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-r-ml3up",
+      "km": 996,
+      "kmText": "996",
+      "kz": false,
+      "mode": "rail",
+      "money": "≈$892 млн; бридж-кредит Reko Diq Mining $390 млн, затем PSDP",
+      "name": "Модернизация ML-3 под Реко-Дик",
+      "route": "Рохри – Якобабад – Сиби – Кветта – Далбандин – Тафтан",
+      "sources": [
+        {
+          "t": "Dawn: Reko Diq loan for ML-3 (06.2026)",
+          "u": "https://www.dawn.com/news/2011499/390m-reko-diq-bridge-loan-for-ml-3"
+        }
+      ],
+      "status": "plan",
+      "sub": "11 новых станций Спезанд – Тафтан",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Фаза I 2026–2030, фаза II 2031–2033",
+      "who": "Pakistan Railways; консультант — СП во главе с Zeeruk International"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-kkh",
+      "km": 887,
+      "kmText": "887 по Пакистану",
+      "kz": false,
+      "mode": "road",
+      "money": "Китай / CPEC",
+      "name": "Каракорумское шоссе (N-35) Хасан-Абдал – Хунджераб",
+      "route": "Хасан-Абдал – Такот – Райкот – Гилгит – Хунджераб – Ташкурган – Кашгар",
+      "sources": [
+        {
+          "t": "Reconstruction of the Karakoram Highway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Reconstruction_of_the_Karakoram_Highway"
+        }
+      ],
+      "status": "ok",
+      "sub": "Единственный автодорожный выход Пакистана в Китай",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "NHA; реконструкции — китайские подрядчики"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-kkhre",
+      "km": 241,
+      "kmText": "241 (1-я фаза 82)",
+      "kz": false,
+      "mode": "road",
+      "money": "≈$2 млрд, Китай — 85%",
+      "name": "ККШ: перенос трассы Такот – Райкот",
+      "route": "Такот – Райкот",
+      "sources": [
+        {
+          "t": "Tribune: China to fund KKH realignment",
+          "u": "https://tribune.com.pk/story/2569225/china-agrees-to-fund-kkh-realignment"
+        }
+      ],
+      "status": "plan",
+      "sub": "Участок затапливается плотиной Диамер-Бхаша",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Одобрено 27.09.2025",
+      "who": "Не выбран; тендер поэтапно"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK",
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-kpec",
+      "km": 48,
+      "kmText": "≈48",
+      "kz": false,
+      "mode": "road",
+      "money": "Всемирный банк $460 млн, освоено 1%",
+      "name": "Скоростная дорога Пешавар – Торкхам",
+      "route": "Пешавар – Ланди-Котал – Торкхам",
+      "sources": [
+        {
+          "t": "Profit: Khyber Pass corridor delays (05.2026)",
+          "u": "https://profit.pakistantoday.com.pk/2026/05/23/world-bank-flags-delays-in-460-million-khyber-pass-corridor-project-pakistan-seeks-3-year-extension/"
+        }
+      ],
+      "status": "plan",
+      "sub": "Khyber Pass Economic Corridor",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Тендер перезапущен в 05.2026; запрошено продление на 3 года",
+      "who": "NHA и правительство Хайбер-Пахтунхвы; подрядчик не выбран"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m14",
+      "km": 285,
+      "kmText": "285",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "M-14 Исламабад – Дера-Исмаил-Хан",
+      "route": "Исламабад – Дера-Исмаил-Хан",
+      "sources": [
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Западный маршрут CPEC",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "2022",
+      "who": "NHA"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m1m2",
+      "km": 530,
+      "kmText": "155 + 375",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "M-1 / M-2 Пешавар – Исламабад – Лахор",
+      "route": "Пешавар – Ношера – Исламабад – Лахор",
+      "sources": [
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Автомагистрали",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "M-2 — 1997, M-1 — 2007",
+      "who": "NHA"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m3m4",
+      "km": 539,
+      "kmText": "230 + 309",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "M-3 / M-4 Лахор – Пинди-Бхаттиан – Мултан",
+      "route": "Лахор – Пинди-Бхаттиан – Мултан",
+      "sources": [
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Автомагистрали",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "2019",
+      "who": "NHA"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m5",
+      "km": 392,
+      "kmText": "392",
+      "kz": false,
+      "mode": "road",
+      "money": "Кредит Китая в рамках CPEC",
+      "name": "M-5 Мултан – Суккур",
+      "route": "Мултан – Суккур",
+      "sources": [
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        },
+        {
+          "t": "M-5 motorway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/M-5_motorway_(Pakistan)"
+        }
+      ],
+      "status": "ok",
+      "sub": "Самый длинный проект CPEC в дорожной сети",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Открыта в 2019",
+      "who": "NHA; генподрядчик — China State Construction (CSCEC)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m6",
+      "km": 306,
+      "kmText": "306",
+      "kz": false,
+      "mode": "road",
+      "money": "≈Rs 364 млрд: IsDB $475 млн (IV–V), OPEC Fund $230 млн (III), ГЧП (I–II)",
+      "name": "M-6 Суккур – Хайдарабад",
+      "route": "Суккур – Навабшах – Тандо-Адам – Хайдарабад",
+      "sources": [
+        {
+          "t": "PakWheels: M-6 from November 2026",
+          "u": "https://www.pakwheels.com/blog/m6-motorway-work-november-2026/"
+        },
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        }
+      ],
+      "status": "plan",
+      "sub": "Шестиполосная, 5 участков",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт ноябрь 2026; тендер I–II 06.11.2026; ввод ≈2029",
+      "who": "NHA; подрядчики не выбраны; участки I–II — ГЧП"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m8",
+      "km": 550,
+      "kmText": "≈550 из 892",
+      "kz": false,
+      "mode": "road",
+      "money": "CPEC / PSDP",
+      "name": "M-8 Ратодеро – Хуздар; Гвадар – Хошаб",
+      "route": "Ратодеро – Хуздар; Гвадар – Турбат – Хошаб",
+      "sources": [
+        {
+          "t": "M-8 motorway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/M-8_motorway_(Pakistan)"
+        }
+      ],
+      "status": "ok",
+      "sub": "Действующие участки, к порту Гвадар",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Гвадар – Хошаб с 2016",
+      "who": "NHA, FWO"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m8gap",
+      "km": 146,
+      "kmText": "146",
+      "kz": false,
+      "mode": "road",
+      "money": "Rs 26 млрд (ECNEC, 07.2020)",
+      "name": "M-8 Хошаб – Аваран – Хуздар",
+      "route": "Хошаб – Аваран – Хуздар",
+      "sources": [
+        {
+          "t": "M-8 motorway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/M-8_motorway_(Pakistan)"
+        }
+      ],
+      "status": "build",
+      "sub": "Недостающее звено M-8",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Сроки не объявлены",
+      "who": "NHA, FWO"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-m9",
+      "km": 136,
+      "kmText": "136",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "M-9 Хайдарабад – Карачи",
+      "route": "Хайдарабад – Карачи",
+      "sources": [
+        {
+          "t": "Motorways of Pakistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Motorways_of_Pakistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "2018",
+      "who": "NHA"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "PK",
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "pk-a-n25",
+      "km": 790,
+      "kmText": "790 (в контрактах 278 + 187)",
+      "kz": false,
+      "mode": "road",
+      "money": "Контракты >Rs 282 млрд",
+      "name": "N-25 Карачи – Кветта – Чаман (расширение)",
+      "route": "Карачи – Хаб – Хуздар – Кветта – Чаман",
+      "sources": [
+        {
+          "t": "Engineering Post: FWO, N-25 Rs 282 bn",
+          "u": "https://enggpost.com/fwo-to-dualise-karachi-chaman-highway-under-rs-282-billion-nha-contracts/"
+        }
+      ],
+      "status": "build",
+      "sub": "Трасса к границе Афганистана",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Контракты 10.2025, срок 2 года",
+      "who": "FWO (заказчик NHA)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-f-casp",
+      "km": 0,
+      "kmText": "н/д",
+      "kz": false,
+      "mode": "fiber",
+      "money": "н/д",
+      "name": "Каспийская ВОЛС Туркменистан – Азербайджан",
+      "route": "Туркменбаши – Баку",
+      "sources": [
+        {
+          "t": "business.com.tm: Каспий ТМ – АЗ",
+          "u": "https://business.com.tm/post/5276/laying-of-transcaspian-fiberoptic-cable-to-boost-regional-cooperation"
+        }
+      ],
+      "status": "plan",
+      "sub": "Туркменбаши – Баку",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Соглашение 11.2019, MoU 03.2020; статус не раскрыт",
+      "who": "Türkmentelekom, AzerTelecom"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-f-tae",
+      "km": 0,
+      "kmText": "н/д",
+      "kz": false,
+      "mode": "fiber",
+      "money": "—",
+      "name": "Транзитная магистраль TAE через Туркменистан",
+      "route": "Туркменбаши – Ашхабад – Мары – Туркменабат – Бухара",
+      "sources": [
+        {
+          "t": "Telecommunications in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Telecommunications_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Европа – Азия",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Türkmentelekom (монополия); транзит — TATA Communications"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-elec",
+      "km": 0,
+      "kmText": "н/д",
+      "kz": false,
+      "mode": "rail",
+      "money": "Не определено",
+      "name": "Электрификация Туркменбаши – Туркменабат и Транскаракумской",
+      "route": "Туркменбаши – Ашхабад – Мары – Туркменабат",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "plan",
+      "sub": "Предложение РЖД Интернешнл",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "На рассмотрении",
+      "who": "РЖД Интернешнл (предложение)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-kti",
+      "km": 677,
+      "kmText": "677 (Узень – Этрек)",
+      "kz": true,
+      "mode": "rail",
+      "money": "—",
+      "name": "Казахстан – Туркменистан – Иран: Узень – Берекет – Этрек – Горган",
+      "route": "Жанаозен – Берекет – Этрек – Горган",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Коридор Север – Юг",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Открыта 03.12.2014",
+      "who": "Türkmendemirýollary, ҚТЖ, RAI"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM",
+        "AF"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-ms",
+      "km": 300,
+      "kmText": "≈300",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "Мары – Серхетабат",
+      "route": "Мары – Серхетабат",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Подход к Тургунди и Герату",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "1520/1435",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-sarakhs",
+      "km": 300,
+      "kmText": "≈300",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "Теджен – Серахс – Мешхед",
+      "route": "Теджен – Серахс – Мешхед",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Выход на Иран",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "1996",
+      "who": "Türkmendemirýollary, RAI"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-tc",
+      "km": 1100,
+      "kmText": "≈1 100",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "Транскаспийская: Туркменбаши – Ашхабад – Мары – Туркменабат",
+      "route": "Туркменбаши – Балканабат – Берекет – Сердар – Ашхабад – Теджен – Мары – Туркменабат",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        },
+        {
+          "t": "business.com.tm: Ashgabat – Turkmenbashi highway 2026",
+          "u": "https://business.com.tm/post/13465/turkmenistan-to-start-new-ashgabatturkmenbashi-highway-section-2026"
+        }
+      ],
+      "status": "ok",
+      "sub": "Основной широтный ход, частично двухпутный",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует; обсуждается модернизация с МФИ",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM",
+        "AF"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-tk",
+      "km": 220,
+      "kmText": "≈220",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "Туркменабат – Керки – Имамназар",
+      "route": "Туркменабат – Керки – Имамназар",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Подход к Акине (ТАТ)",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Керки – Имамназар — 2016",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "1520",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-r-tk2",
+      "km": 540,
+      "kmText": "≈540",
+      "kz": false,
+      "mode": "rail",
+      "money": "—",
+      "name": "Транскаракумская: Ашхабад – Дашогуз",
+      "route": "Ашхабад – Дашогуз",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Север – юг через пустыню",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Февраль 2006",
+      "who": "Türkmendemirýollary"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-a-at",
+      "km": 600,
+      "kmText": "600",
+      "kz": false,
+      "mode": "road",
+      "money": "$2,4 млрд",
+      "name": "Автомагистраль Ашхабад – Туркменабат",
+      "route": "Ашхабад – Теджен – Мары – Туркменабат",
+      "sources": [
+        {
+          "t": "Ashgabat–Turkmenabat Motorway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Ashgabat%E2%80%93Turkmenabat_Motorway"
+        }
+      ],
+      "status": "ok",
+      "sub": "Шестиполосная, три участка",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Ашхабад – Теджен 10.2021, Теджен – Мары 04.2024, Мары – Туркменабат 10.04.2026",
+      "who": "ЗАО Türkmenawtoban; субподрядчики Nusaýýollary, Edermen, Altyn Nesil; контроль — VCE (Австрия)"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-a-atb",
+      "km": 550,
+      "kmText": "≈550",
+      "kz": false,
+      "mode": "road",
+      "money": "Переговоры с МФИ",
+      "name": "Автомагистраль Ашхабад – Туркменбаши",
+      "route": "Ашхабад – Сердар – Балканабат – Туркменбаши",
+      "sources": [
+        {
+          "t": "business.com.tm: Ashgabat – Turkmenbashi highway 2026",
+          "u": "https://business.com.tm/post/13465/turkmenistan-to-start-new-ashgabatturkmenbashi-highway-section-2026"
+        }
+      ],
+      "status": "build",
+      "sub": "Новый участок",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Старт нового участка — 2026",
+      "who": "Не раскрыт"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-a-m37",
+      "km": 1100,
+      "kmText": "≈1 100",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "М37 Туркменбаши – Мары – Туркменабат – Бухара",
+      "route": "Туркменбаши – Балканабат – Ашхабад – Мары – Туркменабат – Бухара",
+      "sources": [
+        {
+          "t": "M37 highway — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/M37_highway_(Turkmenistan)"
+        }
+      ],
+      "status": "ok",
+      "sub": "Европейский маршрут E60 / АН5",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "TM",
+        "AF"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "tm-a-serh",
+      "km": 300,
+      "kmText": "≈300",
+      "kz": false,
+      "mode": "road",
+      "money": "—",
+      "name": "Мары – Серхетабат – Тургунди",
+      "route": "Мары – Серхетабат – Тургунди",
+      "sources": [
+        {
+          "t": "Rail transport in Turkmenistan — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Rail_transport_in_Turkmenistan"
+        }
+      ],
+      "status": "ok",
+      "sub": "Автодорожный выход на Герат",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Действует",
+      "who": "—"
+    },
+    {
+      "checked": "2026-10",
+      "countries": [
+        "OT"
+      ],
+      "gauge": "",
+      "history": [
+        {
+          "at": "2026-10-20T11:30:00Z",
+          "by": "Claude",
+          "what": "Первичное заполнение по открытым источникам"
+        }
+      ],
+      "id": "ot-f-kzaz",
+      "km": 380,
+      "kmText": "380–400",
+      "kz": true,
+      "mode": "fiber",
+      "money": "$50,6 млн",
+      "name": "Транскаспийская ВОЛС Актау – Сумгаит",
+      "route": "Актау – Сумгаит",
+      "sources": [
+        {
+          "t": "Times of Central Asia: Caspian cable",
+          "u": "https://timesca.com/kazakhtelecom-ceo-confirms-2026-launch-of-caspian-submarine-cable-project/"
+        },
+        {
+          "t": "Caucasus Business Journal: Trans-Caspian fiber",
+          "u": "https://caucasusbusinessjournal.com/news/trans-caspian-fiber-azertelecom-kazakhtelecom-q3-2026-launch"
+        }
+      ],
+      "status": "build",
+      "sub": "Выход Центральной Азии в Европу в обход России",
+      "updatedAt": "2026-10-20T11:30:00Z",
+      "updatedBy": "Claude",
+      "when": "Ввод в 3–4 кв. 2026; 400 Тбит/с",
+      "who": "Казахтелеком, AzerTelecom"
+    }
+  ]
+}
